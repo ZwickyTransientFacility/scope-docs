@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Quick Start Guide</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Usage" href="usage.html" />
+  <link rel="prev" title="Installation/Developer Guidelines" href="developer.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Quick Start Guide</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#modify-config-yaml" class="reference internal">Modify config.yaml</a></li>
+                
+                  <li class="toctree-l2"><a href="#training" class="reference internal">Training</a></li>
+                
+                  <li class="toctree-l2"><a href="#plotting-classifier-performance" class="reference internal">Plotting Classifier Performance</a></li>
+                
+                  <li class="toctree-l2"><a href="#inference" class="reference internal">Inference</a></li>
+                
+                  <li class="toctree-l2"><a href="#examining-predictions" class="reference internal">Examining predictions</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Quick Start Guide</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="developer.html"
+       title="previous chapter">← Installation/Developer Guidelines</a>
+  </li>
+  <li class="next">
+    <a href="usage.html"
+       title="next chapter">Usage →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading">¶</a></h1>
+<p>This guide is intended to facilitate quick interactions with SCoPe code after you have completed the <strong>Installation/Developer Guidelines</strong> section. More detailed usage info can be found in the <strong>Usage</strong> section.</p>
+<section id="modify-config-yaml">
+<h2>Modify <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code><a class="headerlink" href="#modify-config-yaml" title="Link to this heading">¶</a></h2>
+<p>To start out, provide SCoPe your training set’s filepath using the <code class="docutils literal notranslate"><span class="pre">training:</span></code> <code class="docutils literal notranslate"><span class="pre">dataset:</span></code> field in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>. The path should be a partial one starting within the <code class="docutils literal notranslate"><span class="pre">scope</span></code> directory. For example, if your training set <code class="docutils literal notranslate"><span class="pre">trainingSet.parquet</span></code> is within the <code class="docutils literal notranslate"><span class="pre">tools</span></code> directory (which itself is within <code class="docutils literal notranslate"><span class="pre">scope</span></code>), provide <code class="docutils literal notranslate"><span class="pre">tools/trainingSet.parquet</span></code> in the <code class="docutils literal notranslate"><span class="pre">dataset:</span></code> field.</p>
+<p>When running scripts, <code class="docutils literal notranslate"><span class="pre">scope</span></code> will by default use the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file in your current directory. You can specify a different config file by providing its path to any installed script using the <code class="docutils literal notranslate"><span class="pre">--config-path</span></code> argument.</p>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Link to this heading">¶</a></h2>
+<p>Train an XGBoost binary classifier using the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scope</span><span class="o">-</span><span class="n">train</span> <span class="o">--</span><span class="n">tag</span> <span class="n">vnv</span> <span class="o">--</span><span class="n">algorithm</span> <span class="n">xgb</span> <span class="o">--</span><span class="n">group</span> <span class="n">ss23</span> <span class="o">--</span><span class="n">period</span><span class="o">-</span><span class="n">suffix</span> <span class="n">ELS_ECE_EAOV</span> <span class="o">--</span><span class="n">epochs</span> <span class="mi">30</span> <span class="o">--</span><span class="n">verbose</span> <span class="o">--</span><span class="n">save</span> <span class="o">--</span><span class="n">plot</span> <span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">cv</span>
+</pre></div>
+</div>
+<section id="arguments">
+<h3>Arguments:<a class="headerlink" href="#arguments" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">--tag</span></code>: the abbreviated name of the classification to train a binary classifier. A list of abbreviations and definitions can be found in the <strong>Guide for Fritz Scanners</strong> section.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--algorithm</span></code>: SCoPe currently supports neural network (dnn) and XGBoost (xgb) algorithms.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--group</span></code>: if <code class="docutils literal notranslate"><span class="pre">--save</span></code> is passed, training results are saved to the group/directory named here.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--period-suffix</span></code>: SCoPe determines light curve periods using GPU-accelerated algorithms. These algorithms include a Lomb-Scargle approach (ELS), Conditional Entropy (ECE), Analysis of Variance (AOV), and an approach nesting all three (ELS_ECE_EAOV). Periodic features are stored with the suffix specified here.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--min-count</span></code>: requires at least min_count positive examples to run training.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--epochs</span></code>: neural network training takes an –epochs argument that is set to 30 here.</p>
+<p><em><strong>Notes:</strong></em></p>
+<ul class="simple">
+<li><p><em>The above training runs the XGB algorithm by default and skips cross-validation in the interest of time. For a full run, you can remove the <code class="docutils literal notranslate"><span class="pre">--skip-cv</span></code> argument to run a cross-validated grid search of XGB hyperparameters during training.</em></p></li>
+<li><p><em>DNN hyperparameters are optimized using a different approach - Weights and Biases Sweeps (https://docs.wandb.ai/guides/sweeps). The results of these sweeps are the default hyperparameters in the config file. To run another round of sweeps for DNN, create a WandB account and set the <code class="docutils literal notranslate"><span class="pre">--run-sweeps</span></code> keyword in the call to <code class="docutils literal notranslate"><span class="pre">scope-train</span></code>.</em></p></li>
+<li><p><em>SCoPe DNN training does not provide feature importance information (due to the hidden layers of the network). Feature importance is possible to estimate for neural networks, but it is more computationally expensive compared to this “free” information from XGB.</em></p></li>
+</ul>
+</section>
+<section id="train-multiple-classifiers-with-one-script">
+<h3>Train multiple classifiers with one script<a class="headerlink" href="#train-multiple-classifiers-with-one-script" title="Link to this heading">¶</a></h3>
+<p>Create a shell script that contains multiple calls to <code class="docutils literal notranslate"><span class="pre">scope-train</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">-</span><span class="n">training</span><span class="o">-</span><span class="n">script</span> <span class="o">--</span><span class="n">filename</span> <span class="n">train_xgb</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">count</span> <span class="mi">1000</span> <span class="o">--</span><span class="n">algorithm</span> <span class="n">xgb</span> <span class="o">--</span><span class="n">period</span><span class="o">-</span><span class="n">suffix</span> <span class="n">ELS_ECE_EAOV</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">keywords</span> <span class="s2">&quot;--save --plot --group ss23 --epochs 30 --skip-cv&quot;</span>
+</pre></div>
+</div>
+<p>Modify the permissions of this script by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">train_xgb.sh</span></code>. Run the generated training script in a terminal window (using e.g. <code class="docutils literal notranslate"><span class="pre">./train_xgb.sh</span></code>) to train multiple classifers sequentially.</p>
+<p><em><strong>Note:</strong></em></p>
+<ul class="simple">
+<li><p><em>The code will raise an error if the training script filename already exists.</em></p></li>
+</ul>
+</section>
+<section id="running-training-on-hpc-resources">
+<h3>Running training on HPC resources<a class="headerlink" href="#running-training-on-hpc-resources" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">train-algorithm-slurm</span></code> and <code class="docutils literal notranslate"><span class="pre">train-algorithm-job-submission</span></code> can be used generate and submit <code class="docutils literal notranslate"><span class="pre">slurm</span></code> scripts to train all classifiers in parallel using HPC resources.</p>
+</section>
+</section>
+<section id="plotting-classifier-performance">
+<h2>Plotting Classifier Performance<a class="headerlink" href="#plotting-classifier-performance" title="Link to this heading">¶</a></h2>
+<p>SCoPe saves diagnostic plots and json files to report each classifier’s performance. The below code shows the location of the validation set results for one classifier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">path_model</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;scope/models_xgb/ss23/vnv&quot;</span>
+<span class="n">path_stats</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">path_model</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*plots/val/*stats.json&quot;</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_stats</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The code below makes a bar plot of the precision and recall for this classifier:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">13</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;XGB performance (vnv)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s2">&quot;vnv&quot;</span><span class="p">,</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;precision&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;precision&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s2">&quot;vnv&quot;</span><span class="p">,</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;recall&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;recall&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Score&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>This code may also be placed in a loop over multiple labels to compare each classifier’s performance.</p>
+</section>
+<section id="inference">
+<h2>Inference<a class="headerlink" href="#inference" title="Link to this heading">¶</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">run-inference</span></code> to run inference on a field (297) of features (in this example, located in a directory called <code class="docutils literal notranslate"><span class="pre">generated_features</span></code>). The classifiers used for this inference are within the <code class="docutils literal notranslate"><span class="pre">ss23</span></code> directory/group specified during training.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">-</span><span class="n">inference</span><span class="o">-</span><span class="n">script</span> <span class="o">--</span><span class="n">filename</span> <span class="n">get_all_preds_xgb</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">name</span> <span class="n">ss23</span> <span class="o">--</span><span class="n">algorithm</span> <span class="n">xgb</span> <span class="o">--</span><span class="n">period</span><span class="o">-</span><span class="n">suffix</span> <span class="n">ELS_ECE_EAOV</span> <span class="o">--</span><span class="n">feature</span><span class="o">-</span><span class="n">directory</span> <span class="n">generated_features</span>
+</pre></div>
+</div>
+<p>Modify the permissions of this script using <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">get_all_preds_xgb.sh</span></code>, then run on the desired field:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">get_all_preds_xgb</span><span class="o">.</span><span class="n">sh</span> <span class="mi">297</span>
+</pre></div>
+</div>
+<p><em><strong>Notes:</strong></em></p>
+<ul class="simple">
+<li><p><em><code class="docutils literal notranslate"><span class="pre">create-inference-script</span></code> will raise an error if the inference script filename already exists.</em></p></li>
+<li><p><em>Inference begins by imputing missing features using the strategies specified in the <code class="docutils literal notranslate"><span class="pre">features:</span></code> section of the config file.</em></p></li>
+</ul>
+<section id="running-inference-on-hpc-resources">
+<h3>Running inference on HPC resources<a class="headerlink" href="#running-inference-on-hpc-resources" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">run-inference-slurm</span></code> and <code class="docutils literal notranslate"><span class="pre">run-inference-job-submission</span></code> can be used generate and submit <code class="docutils literal notranslate"><span class="pre">slurm</span></code> scripts to run inference for all classifiers in parallel using HPC resources.*</p>
+</section>
+</section>
+<section id="examining-predictions">
+<h2>Examining predictions<a class="headerlink" href="#examining-predictions" title="Link to this heading">¶</a></h2>
+<p>The result of running the inference script will be a parquet file containing some descriptive columns followed by columns containing for each classification’s probability for each source in the field. By default, the file is located as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path_preds</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;scope/preds_xgb/field_297/field_297.parquet&quot;</span>
+</pre></div>
+</div>
+<p>SCoPe’s <code class="docutils literal notranslate"><span class="pre">read_parquet</span></code> utility offers an easy way to read the predictions file and provide it as a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scope.utils</span> <span class="kn">import</span> <span class="n">read_parquet</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">read_parquet</span><span class="p">(</span><span class="n">path_preds</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="developer.html"
+       title="previous chapter">← Installation/Developer Guidelines</a>
+  </li>
+  <li class="next">
+    <a href="usage.html"
+       title="next chapter">Usage →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

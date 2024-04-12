@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Field guide</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="ACCESS allocation management" href="allocation.html" />
+  <link rel="prev" title="Guide for Fritz Scanners" href="scanner.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Field guide</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#variable-stars-vnv" class="reference internal">Variable stars (vnv)</a></li>
+                
+                  <li class="toctree-l2"><a href="#periodic-variables-pnp" class="reference internal">Periodic Variables (pnp)</a></li>
+                
+                  <li class="toctree-l2"><a href="#rr-lyrae-rrlyr" class="reference internal">RR Lyrae (rrlyr)</a></li>
+                
+                  <li class="toctree-l2"><a href="#w-uma-wuma" class="reference internal">W Uma (wuma)</a></li>
+                
+                  <li class="toctree-l2"><a href="#delta-scuti-dscu" class="reference internal">Delta Scuti (dscu)</a></li>
+                
+                  <li class="toctree-l2"><a href="#classical-cepheids-ceph" class="reference internal">Classical Cepheids (ceph)</a></li>
+                
+                  <li class="toctree-l2"><a href="#cataclysmic-variables-cv" class="reference internal">Cataclysmic Variables (cv)</a></li>
+                
+                  <li class="toctree-l2"><a href="#flaring-variables-fla" class="reference internal">Flaring variables (fla)</a></li>
+                
+                  <li class="toctree-l2"><a href="#beta-lyr-blyr" class="reference internal">Beta Lyr (blyr)</a></li>
+                
+                  <li class="toctree-l2"><a href="#long-period-variables-lpv" class="reference internal">Long Period Variables (lpv)</a></li>
+                
+                  <li class="toctree-l2"><a href="#bogus-variability-bogus" class="reference internal">Bogus variability (bogus)</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Field guide</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="scanner.html"
+       title="previous chapter">← Guide for Fritz Scanners</a>
+  </li>
+  <li class="next">
+    <a href="allocation.html"
+       title="next chapter">ACCESS allocation management →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="field-guide">
+<h1>Field guide<a class="headerlink" href="#field-guide" title="Link to this heading">¶</a></h1>
+<p>This guide provides detailed information about the different types of variable sources along with examples of bogus variability.</p>
+<p>Proceed <a href="_static/taxonomy.html">here</a> to interactively inspect the taxonomy
+tree we are employing in SCoPe. Please refer to <a class="reference external" href="https://arxiv.org/pdf/2102.11304.pdf">arXiv:2102.11304</a>
+for more details on the taxonomy.</p>
+<section id="variable-stars-vnv">
+<h2>Variable stars (vnv)<a class="headerlink" href="#variable-stars-vnv" title="Link to this heading">¶</a></h2>
+<p>Variable stars are objects whose brightness is varying at a statistically significant level.
+ZTF has statistical measurements depend on magnitude: down to ~10 millimagnitudes for bright stars and &gt;0.1 mag for objects near the detection limit.
+Many astrophysical objects exhibit variable behavior, including periodic variables such as eclipsing binaries, pulsators, etc, and non-periodic variables such as AGN and YSOs.</p>
+<section id="classification-and-numbers">
+<h3>Classification and numbers<a class="headerlink" href="#classification-and-numbers" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Subtypes</p>
+<ul>
+<li><p>Irregular</p></li>
+<li><p>Flaring</p></li>
+<li><p>Periodic</p></li>
+<li><p>Dipping</p></li>
+<li><p>Long Time Scale</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ztf-light-curves">
+<h3>ZTF light curves<a class="headerlink" href="#ztf-light-curves" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF variable" src="_images/variable.png" /></p>
+<section id="description">
+<h4>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h4>
+<p>Most stars are likely to be variable at some level. Therefore, variable is defined to be those varying at a statistically varying level, with millimagnitude to magnitude level variations.</p>
+</section>
+<section id="light-curve-characteristics">
+<h4>Light curve characteristics<a class="headerlink" href="#light-curve-characteristics" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>amplitude: varies from survey precision to more than a magnitude</p></li>
+</ul>
+<p><img alt="HR diagram of Variable" src="_images/hr__variable.png" /></p>
+<p><img alt="RA/Dec diagram of Variable" src="_images/radec__variable.png" /></p>
+</section>
+</section>
+<section id="references-and-further-reading">
+<h3>References and further reading:<a class="headerlink" href="#references-and-further-reading" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Jayasinghe et al., 2018, MNRAS 447 3, The ASAS-SN catalogue of variable stars I: The Serendipitous Survey <a class="reference external" href="https://arxiv.org/pdf/1803.01001.pdf">arxiv:1803.01001</a></p></li>
+</ul>
+</section>
+</section>
+<section id="periodic-variables-pnp">
+<h2>Periodic Variables (pnp)<a class="headerlink" href="#periodic-variables-pnp" title="Link to this heading">¶</a></h2>
+<p>Periodic Variables are objects that exhibit repeating sequences of values over a fixed length of time, known as the period.
+Many astrophysical objects exhibit periodic behavior, including eclipsing binaries, pulsators, etc.</p>
+<section id="id1">
+<h3>Classification and numbers<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+</ul>
+</li>
+<li><p>Subtypes</p>
+<ul>
+<li><p>Eclipsing</p></li>
+<li><p>Sinusoidal</p></li>
+<li><p>Sawtooth</p></li>
+<li><p>Elliptical</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3>ZTF light curves<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF periodic" src="_images/periodic.png" /></p>
+<section id="id3">
+<h4>Description<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h4>
+<p>Periodic variables have periods ranging from minutes to over a thousand days with millimagnitude to magnitude level variations.</p>
+</section>
+<section id="id4">
+<h4>Light curve characteristics<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable: objects that exhibit repeating sequences of values over a fixed length of time</p></li>
+<li><p>period range: 0.001-1000 days</p></li>
+<li><p>amplitude: varies from survey precision to more than a magnitude</p></li>
+</ul>
+<p><img alt="HR diagram of Periodic" src="_images/hr__periodic.png" /></p>
+<p><img alt="RA/Dec diagram of Periodic" src="_images/radec__periodic.png" /></p>
+</section>
+</section>
+<section id="id5">
+<h3>References and further reading:<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Drake et al., 2014, ApJS 618 213 9, The Catalina Surveys Periodic Variable Catalog <a class="reference external" href="https://arxiv.org/pdf/1405.4290.pdf">arxiv:1405.4290</a></p></li>
+</ul>
+</section>
+</section>
+<section id="rr-lyrae-rrlyr">
+<h2>RR Lyrae (rrlyr)<a class="headerlink" href="#rr-lyrae-rrlyr" title="Link to this heading">¶</a></h2>
+<p>RR Lyrae are pulsating horizontal branch dA/dF stars with a mass 0.5 of Solar masses.
+They are part of the main ‘instability strip’ in the HR-diagram,
+where stars pulsate due to the double ionisation of He.
+The two main subtypes are <code class="docutils literal notranslate"><span class="pre">ab</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>,</p>
+<section id="id6">
+<h3>Classification and numbers<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>pulsator</p></li>
+</ul>
+</li>
+<li><p>Subtypes</p>
+<ul>
+<li><p>RR Lyrae ab</p></li>
+<li><p>RR Lyrae c</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>5</sup> expected in ZTF data</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>ZTF light curves<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF rrlyr ab" src="_images/rr_lyr_ab.png" />
+<img alt="ZTF rrlyr c" src="_images/rr_lyr_c.png" /></p>
+<section id="id8">
+<h4>Description<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h4>
+<p>RR Lyrae (ab) are easy to recognise by their distinctive light curve shape and
+high amplitude variability.
+RR Lyrae (c) are a bit more of a challenge since their light curve shape is more sinusoidal.
+For low-SNR cases they can sometimes be confused with contact binaries (EW),
+which occur at similar periods and have sinusoidal-like light curves.</p>
+</section>
+<section id="id9">
+<h4>Light curve characteristics<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>period range: 0.2-1 days</p></li>
+<li><p>amplitude: up to 1 mag (subtype ab), or 0.5 mag (subtype c)</p></li>
+<li><p>light curve shape:</p>
+<ul>
+<li><p>sawtooth; steep rise and slow decay (subtype ab)</p></li>
+<li><p>periodic sinusoidal (subtype c)</p></li>
+</ul>
+</li>
+<li><p>can show modulation of the light curve shape on timescales of ~100 days (Blazhko effect)</p></li>
+</ul>
+</section>
+<section id="other-characteristics-and-selection-methods">
+<h4>Other characteristics and selection methods<a class="headerlink" href="#other-characteristics-and-selection-methods" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>intrinsic RR Lyrae colors: blue, that of A/F type main sequence stars (g-r = -0.1 – 0.5).
+Reddening can be significant since these stars can be detected at large distances.</p></li>
+<li><p>absolute magnitude: -1&lt;G&lt;1</p></li>
+</ul>
+<p><img alt="HR diagram of RRlyrae" src="_images/hr__rr_lyr.png" /></p>
+<p><img alt="RA/Dec diagram of RRlyrae" src="_images/radec__rr_lyr.png" /></p>
+</section>
+</section>
+<section id="id10">
+<h3>References and further reading:<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Sterken &amp; Jasschek: Light curves of variable stars</p></li>
+</ul>
+</section>
+</section>
+<section id="w-uma-wuma">
+<h2>W Uma (wuma)<a class="headerlink" href="#w-uma-wuma" title="Link to this heading">¶</a></h2>
+<p>W UMa stars are main-sequence overcontact binaries. In overcontact binaries both stars are too large for their Roche lobe share a common envelope and can exchange mass and energy. The mass-ratio of the system ranges from 1 to 10 in extreme cases. Components can have different raddii and surface brightness with temperatures ranging from 4000 to 9000K.</p>
+<section id="id11">
+<h3>Classification and numbers<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>binary</p></li>
+<li><p>eclipsing</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>5</sup> expected in ZTF data</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>ZTF light curves<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF wuma" src="_images/w_uma.png" /></p>
+<section id="id13">
+<h4>Description<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h4>
+<p>Contact binary lightcurves show a distinctive shape that shows two eclipses which do smoothly transition over. Eclipses can have a flat bottom. The eclipse depth is often identical, but can be show slightly different depths. In rare cases there can be differences in the maxima of the lightcurves (e.g. due to starspots).</p>
+</section>
+<section id="id14">
+<h4>Light curve characteristics<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>period range: 0.22-0.8 days</p></li>
+<li><p>amplitude: up to 0.75 mag</p></li>
+<li><p>light curve shape: EW, two ‘V’-shaped eclipses with smooth transitions</p></li>
+<li><p>eclipses often equal depth, within 0.1mag</p></li>
+</ul>
+</section>
+<section id="id15">
+<h4>Other characteristics and selection methods<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>g-r = -0.1 – 1.0. Short period systems are typically redder.</p></li>
+<li><p>absolute magnitudes are similar to main-sequence stars</p></li>
+</ul>
+<p><img alt="HR diagram of W Uma" src="_images/hr__w_uma.png" /></p>
+<p><img alt="RA/Dec diagram of W Uma" src="_images/radec__w_uma.png" /></p>
+</section>
+</section>
+<section id="id16">
+<h3>References and further reading:<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Sterken &amp; Jasschek: Light curves of variable stars</p></li>
+<li><p>Marsh et al, MNRAS 465, 4678–4689, 2017</p></li>
+</ul>
+</section>
+</section>
+<section id="delta-scuti-dscu">
+<h2>Delta Scuti (dscu)<a class="headerlink" href="#delta-scuti-dscu" title="Link to this heading">¶</a></h2>
+<p>Delta Scuti variables are classic pulsating stars (i.e., they are stars passing through the <a class="reference external" href="https://en.wikipedia.org/wiki/Instability_strip">instability strip</a>). As these stars expand and contract (i.e. pulsate) their size and temperature changes leading to regular, smooth variations in their brightness. Delta Scuti stars are smaller than both Cepheids and RR Lyrae stars, which leads to a short period of oscillations (typically anywhere between 0.03 days and 0.3 days).</p>
+<section id="id17">
+<h3>Classification and numbers<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>pulsator</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>4</sup> expected in ZTF data</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>ZTF light curves<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF delta_scuti" src="_images/delta_scuti.png" /></p>
+<section id="id19">
+<h4>Description<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h4>
+<p>Delta Scuti are easy to recognise by their distinctive light curve shape and period range, which distinguishes them from RR Lyrae and Cepheids.</p>
+</section>
+<section id="id20">
+<h4>Light curve characteristics<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>period range: 0.03-0.3 days</p></li>
+<li><p>amplitude: Small amplitude (between 0.05 and 0.3)</p></li>
+<li><p>light curve shape:</p>
+<ul>
+<li><p>smooth, sawtooth variations (blue/green filters show stronger sawtooth pattern); steep rise and slow decay</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id21">
+<h4>Other characteristics and selection methods<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>intrinsic Delta Scuti colors: blue, that of A/F type main sequence stars (g-r = -0.1 – 0.5).
+Reddening can be significant since these stars can be detected at large distances.</p></li>
+<li><p>absolute magnitude: 0&lt;G&lt;5</p></li>
+</ul>
+<p><img alt="HR diagram of Delta Scuti" src="_images/hr__delta_scuti.png" /></p>
+<p><img alt="RA/Dec diagram of Delta Scuti" src="_images/radec__delta_scuti.png" /></p>
+</section>
+</section>
+<section id="id22">
+<h3>References and further reading:<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Sterken &amp; Jasschek: Light curves of variable stars</p></li>
+</ul>
+</section>
+</section>
+<section id="classical-cepheids-ceph">
+<h2>Classical Cepheids (ceph)<a class="headerlink" href="#classical-cepheids-ceph" title="Link to this heading">¶</a></h2>
+<p>Classical Cepheids are young, bright (100-10,000 solar luminosities) supergiant stars that pulsate with periods of 1 to 100 days (typically several days). They are located in the main instability strip in the H-R diagram. Cepheids follow a famous pulsation period-luminosity relation, allowing the absolute magnitude of a Cepheid, and thus its distance, to be inferred from the pulsation period. Thus, Cepheids are used to measure distances to nearby galaxies.</p>
+<section id="id23">
+<h3>Classification and numbers<a class="headerlink" href="#id23" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>pulsator</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: rare, about 10<sup>3</sup> expected in ZTF data, mostly in the Galactic plane and in M31</p></li>
+</ul>
+</section>
+<section id="id24">
+<h3>ZTF light curves<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF cepheids" src="_images/cepheid_F.png" />
+<img alt="ZTF cepheids" src="_images/cepheid_F_1.png" />
+<img alt="ZTF cepheids" src="_images/cepheid_1O.png" />
+<img alt="ZTF cepheids" src="_images/cepheid_F1O.png" /></p>
+<section id="id25">
+<h4>Description<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h4>
+<p>Fundamental-mode Cepheids are easy to recognise by their distinctive sawtooth light curve shape (with a rapid rise to maximum light and a slower decline) and period range (from 1 to 100 days). A secondary bump may be seen in the light curves of some Cepheids with periods in the range 6-20 days. Cepheids pulsating in the first overtone have lower amplitudes and more symmetric light curves than fundamental-mode Cepheids. Their periods (in the Milky Way) range from 0.24 to 8 days. The lower period limit is arbitrary since there is no natural boundary between first-overtone Cepheids and delta Scuti stars. Some Cepheids pulsate both in the fundamental mode and first overtone, the period ratio ranges from 0.68 to 0.77.</p>
+</section>
+<section id="id26">
+<h4>Light curve characteristics<a class="headerlink" href="#id26" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>period range: 1-100 days (fundamental-mode pulsators), 0.24-8 days (first-overtone pulsators)</p></li>
+<li><p>amplitude: moderate amplitude (~0.3 to 0.8 mag)</p></li>
+<li><p>light curve shape:</p>
+<ul>
+<li><p>smooth, sawtooth variations (blue/green filters show stronger sawtooth pattern); steep rise and slow decay</p></li>
+<li><p>Classical Cepheids with pulsation periods 6-20 days may have a secondary bump</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id27">
+<h4>Other characteristics and selection methods<a class="headerlink" href="#id27" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>intrinsic Cepheids colors: Bp-Rp = 0.8 – 2.0 mag, but as these stars are located near the Galactic plane, the reddening may be significant</p></li>
+<li><p>absolute magnitude: -6&lt;G&lt;-2</p></li>
+<li><p>located close to the Galactic plane (within ~10 degrees)</p></li>
+</ul>
+<p><img alt="HR diagram of classical Cepheids" src="_images/hr__cepheid.png" /></p>
+<p><img alt="RA/Dec diagram of classical Cepheids" src="_images/radec__cepheid.png" /></p>
+<p><img alt="Period histogram of classical Cepheids" src="_images/period__cepheid.png" /></p>
+</section>
+</section>
+<section id="id28">
+<h3>References and further reading:<a class="headerlink" href="#id28" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Soszynski, I. et al. (2008) <a href="https://ui.adsabs.harvard.edu/abs/2008AcA....58..163S/abstract">The Optical Gravitational Lensing Experiment. The OGLE-III Catalog of Variable Stars. I. Classical Cepheids in the Large Magellanic Cloud</a></p></li>
+<li><p>Udalski, A. et al. (2018) <a href="https://ui.adsabs.harvard.edu/abs/2018AcA....68..315U/abstract">OGLE Collection of Galactic Cepheids</a></p></li>
+<li><p>Rimoldini, L. et al. (2019) <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...625A..97R/abstract">Gaia Data Release 2. All-sky classification of high-amplitude pulsating stars</a></p></li>
+<li><p>Skowron, D. et al. (2020) <a href="https://ui.adsabs.harvard.edu/abs/2019Sci...365..478S/abstract">A three-dimensional map of the Milky Way using classical Cepheid variable stars</a></p></li>
+</ul>
+</section>
+</section>
+<section id="cataclysmic-variables-cv">
+<h2>Cataclysmic Variables (cv)<a class="headerlink" href="#cataclysmic-variables-cv" title="Link to this heading">¶</a></h2>
+<p>Cataclysmic variables are close binaries with active mass transfer from a late
+type main sequence star or brown dwarf to a white dwarf. There are several different
+types of CVs, depending on their causes of variability. These include novae (which
+have 9-15 mag outbursts from thermonuclear events on the white dwarf surface), dwarf novae which have 2-9 mag outbursts on weeks to decades timescales due to disk instabilities) and novalikes which do not have outbursts but have high and low states of accretion which cause several magnitudes of brightness change.</p>
+<section id="id29">
+<h3>Classification and numbers<a class="headerlink" href="#id29" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>aperiodic outbursts</p></li>
+<li><p>aperiodic high and low states</p></li>
+<li><p>periodic orbital variability</p></li>
+</ul>
+</li>
+<li><p>Subtypes</p>
+<ul>
+<li><p>Nova</p></li>
+<li><p>U Gem dwarf nova</p></li>
+<li><p>Z Cam dwarf nova</p></li>
+<li><p>SU UMa/WZ Sge dwarf nova</p></li>
+<li><p>Novalike</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: common, several thousand expected in ZTF data</p></li>
+</ul>
+</section>
+<section id="id30">
+<h3>ZTF light curves<a class="headerlink" href="#id30" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF CV U Gem" src="_images/cv_U_Gem.png" />
+<img alt="ZTF CV Z Cam" src="_images/cv_Z_Cam.png" />
+<img alt="ZTF CV SU UMa" src="_images/cv_SU_UMa.png" />
+<img alt="ZTF CV Novalike" src="_images/cv_Novalike.png" /></p>
+<section id="id31">
+<h4>Description<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h4>
+<p>CVs are easy to recognize by their distinctive light curve shape, colors and
+high amplitude variability. The outbursts are non-periodic.
+They can sometimes be confused with supernovae, flare stars or long period variables.</p>
+</section>
+<section id="id32">
+<h4>Light curve characteristics<a class="headerlink" href="#id32" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>non-periodic variable but recur on some timescale</p></li>
+<li><p>outburst timescale range: days to decades</p></li>
+<li><p>amplitude: 9-15 mag (nova), 2-9 mag (dwarf nova), 1-4 mag (novalike)</p></li>
+<li><p>light curve shape:</p>
+<ul>
+<li><p>sawtooth; steep rise and slow decay (subtype nova)</p></li>
+<li><p>symmetrical to slightly sawtooth (subtype U Gem)</p></li>
+<li><p>standstills about 1 mag below outburst level for weeks (subtype Z Cam)</p></li>
+<li><p>fast rise and extended plateau for 1-2 weeks followed by steeper decline     (subtype SU UMa/WZ Sge)</p></li>
+<li><p>extended (days-weeks) states at either high or low brightness</p></li>
+</ul>
+</li>
+<li><p>can show periodic modulation of the light curve on orbital timescales of hours</p></li>
+</ul>
+</section>
+<section id="id33">
+<h4>Other characteristics and selection methods<a class="headerlink" href="#id33" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>intrinsic CV colors: blue, (g-r &lt; 0.6).
+Reddening is usually not important except for places in the galactic plane.</p></li>
+<li><p>absolute magnitude at quiescence: 8&lt;G&lt;14</p></li>
+</ul>
+<p><img alt="HR diagram of CVs" src="_images/hr__cv.png" /></p>
+</section>
+</section>
+<section id="id34">
+<h3>References and further reading:<a class="headerlink" href="#id34" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Warner 1995: Cataclysmic Variable Stars</p></li>
+</ul>
+</section>
+</section>
+<section id="flaring-variables-fla">
+<h2>Flaring variables (fla)<a class="headerlink" href="#flaring-variables-fla" title="Link to this heading">¶</a></h2>
+<p>The phenomelogical classification of <code class="docutils literal notranslate"><span class="pre">flaring</span></code> is any kind of outbursting source, where a variable star (or binary system) dramatically increases in brightness for minutes to hours before returning to quiescence. Most flare stars are red dwarfs, while RS Canum Venaticorum variables (RS CVn) are also known to flare due to a companion star in the binary system. Other possible sources of flaring include dwarf novae, which arise from accretion disk activity in a cataclysmic variable star.</p>
+<section id="id35">
+<h3>Classification and numbers<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, for a given red dwarf, flares 10³¹ - 10³² ergs occur about once per day, and flares 10³³ - 10³⁴ ergs occur about once per 10-100 days.</p></li>
+</ul>
+</section>
+<section id="id36">
+<h3>ZTF light curves<a class="headerlink" href="#id36" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF flaring_dwarfnova" src="_images/flaring_dwarfnova.png" /></p>
+<p><img alt="ZTF flaring_mdwarf" src="_images/flaring_mdwarf.png" /></p>
+<section id="id37">
+<h4>Description<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h4>
+<p>Flaring stars are easy to recognise by their increase in brightness from quiescent levels, rapidly returning to that same level shortly thereafter.</p>
+</section>
+<section id="id38">
+<h4>Light curve characteristics<a class="headerlink" href="#id38" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>variable</p></li>
+<li><p>increase in brightness before returning to quiescence.</p></li>
+<li><p>amplitude: at the bright end, flares can be many magnitudes, while at the dim end, flare detection is limited by survey photometric precision.</p></li>
+</ul>
+<p><img alt="HR diagram of Flaring" src="_images/hr__flaring.png" /></p>
+<p><img alt="RA/Dec diagram of Flaring" src="_images/radec__flaring.png" /></p>
+</section>
+</section>
+<section id="id39">
+<h3>References and further reading:<a class="headerlink" href="#id39" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Taichi Kato, WZ Sge-type dwarf novae, Publications of the Astronomical Society of Japan, Volume 67, Issue 6, December 2015, 108 <a class="reference external" href="https://arxiv.org/pdf/1507.07659.pdf">arxiv:1507.07659</a></p></li>
+<li><p>Maximilian N. Günther et al 2020 AJ 159 60, <a class="reference external" href="https://arxiv.org/pdf/1901.00443.pdf">arxiv:1901.00443</a></p></li>
+</ul>
+</section>
+</section>
+<section id="beta-lyr-blyr">
+<h2>Beta Lyr (blyr)<a class="headerlink" href="#beta-lyr-blyr" title="Link to this heading">¶</a></h2>
+<p>Semi-detached eclipsing binaries (also called <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_Lyrae_variable">beta Lyrae variables</a>) are binary star systems (i.e. two stars that are in orbit around each other) that are aligned such that they eclipse each other relative to our line of sight from the Earth. Unlike detached EBs, semi-detatched systems are so close to each other that the shape of (at least one of) the stars in the system are distorted, giving rise to the smooth periodic variations even when the system is not eclipsing.</p>
+<section id="id40">
+<h3>Classification and numbers<a class="headerlink" href="#id40" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>binary</p></li>
+<li><p>eclipsing</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>5</sup> expected in ZTF data</p></li>
+</ul>
+</section>
+<section id="id41">
+<h3>ZTF light curves<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF betalyr" src="_images/beta_lyr.png" /></p>
+<section id="id42">
+<h4>Description<a class="headerlink" href="#id42" title="Link to this heading">¶</a></h4>
+<p>Any type of star can be in an eclipsing binary (so they may be small, large, hot, cool, etc.), which in turn can lead to a large range in eclipse amplitudes (though typically these are between 0.1 and ~1 mag, with most in the ~0.3 to 0.75 mag range) or eclipse periods (though our observations are typically only sensitive to periods between 0.1 to ~20 days).</p>
+</section>
+<section id="id43">
+<h4>Light curve characteristics<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>Range of amplitudes (~0.2 to &gt;1 mag)</p></li>
+<li><p>Intermediate periods (log Period between -0.5 and 1.4)</p></li>
+<li><p>light curve shape: EB, round or sinusoidal light curves, with imposed “V-shape” dips in the phase folded light curve</p></li>
+</ul>
+<p><img alt="HR diagram of Beta Lyrae" src="_images/hr__beta_lyr.png" /></p>
+<p><img alt="Period histogram of Beta Lyrae" src="_images/period__beta_lyr.png" /></p>
+</section>
+</section>
+<section id="id44">
+<h3>References and further reading:<a class="headerlink" href="#id44" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Sterken &amp; Jasschek: Light curves of variable stars</p></li>
+</ul>
+</section>
+</section>
+<section id="long-period-variables-lpv">
+<h2>Long Period Variables (lpv)<a class="headerlink" href="#long-period-variables-lpv" title="Link to this heading">¶</a></h2>
+<p>Long Period Variables have periods over several tens of days.
+They incorporate various groups of cool luminous pulsators.
+The canonical example is Mira.</p>
+<section id="id45">
+<h3>Classification and numbers<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>pulsator</p></li>
+</ul>
+</li>
+<li><p>Subtypes</p>
+<ul>
+<li><p>Miras</p></li>
+<li><p>Semiregulars</p></li>
+<li><p>OSARGs - OGLE Small Amplitude Red Giants (some astronomers do not include these under LPVs)</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>5</sup> expected in ZTF data</p></li>
+<li><p>Non LPV wth Long Periods</p>
+<ul>
+<li><p>RV Tau - Cepheid IIs</p></li>
+</ul>
+</li>
+<li><p>Other possible confusions</p>
+<ul>
+<li><p>YSOs - their variations tend to be over shorter periods</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id46">
+<h3>ZTF light curves<a class="headerlink" href="#id46" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF lpv" src="_images/mira.png" />
+<img alt="ZTF lpv" src="_images/srv.png" /></p>
+<section id="id47">
+<h4>Description<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h4>
+<p>Long period variables have periods from several tens of days to over thousand day and are
+easy to identify due to the slow variations.</p>
+</section>
+<section id="id48">
+<h4>Light curve characteristics<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>period range: 100-1000 days</p></li>
+<li><p>amplitude: over a mag (Mira), or a few tenths of a mag to 1 or 2 mags (semiregulars)</p></li>
+<li><p>light curve shape:</p>
+<ul>
+<li><p>periodic sinusoidal (Mira)</p></li>
+<li><p>semiregular (Semiregular)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id49">
+<h4>Other characteristics and selection methods<a class="headerlink" href="#id49" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>intrinsic lpv colors: red</p></li>
+<li><p>absolute magnitude:</p></li>
+</ul>
+<p><img alt="HR diagram of LPV" src="_images/hr__lpv.png" /></p>
+<p><img alt="RA/Dec diagram of LPV" src="_images/radec__lpv.png" /></p>
+</section>
+</section>
+<section id="id50">
+<h3>References and further reading:<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Mowlawi et al., 2018, A&amp;A 618, A58, The first Gaia catalogue of long-period variable candidates <a class="reference external" href="https://arxiv.org/pdf/1805.02035.pdf">arxiv:1805.02035</a></p></li>
+<li><p>Soszynski et al., 2009, AcA, 59, 239S, The Optical Gravitational Lensing Experiment. The OGLE-III Catalog of Variable Stars. IV. Long-Period Variables in the Large Magellanic Cloud <a class="reference external" href="https://arxiv.org/pdf/0910.1354.pdf">arxix:0910.1354</a></p></li>
+<li><p>Soszynski et al., 2008, AcA, 58, 293S, The Optical Gravitational Lensing Experiment. The OGLE-III Catalog of Variable Stars. II.Type II Cepheids and Anomalous Cepheids in the Large Magellanic Cloud <a class="reference external" href="https://arxiv.org/pdf/0811.3636.pdf">arxiv:0811.3636</a></p></li>
+</ul>
+</section>
+</section>
+<section id="bogus-variability-bogus">
+<h2>Bogus variability (bogus)<a class="headerlink" href="#bogus-variability-bogus" title="Link to this heading">¶</a></h2>
+<p>Not all light curve variability pertains to a source’s intrinsic astrophysical nature. Some is caused by nearby extended objects, bright stars, blends and image artifacts, and being aware of how such bogus light curves appear can help avoid confusion.</p>
+<section id="id51">
+<h3>ZTF light curves<a class="headerlink" href="#id51" title="Link to this heading">¶</a></h3>
+<p><img alt="ZTF bogus" src="_images/bogus_1.png" />
+<img alt="ZTF bogus" src="_images/bogus_2.png" /></p>
+<section id="id52">
+<h4>Description<a class="headerlink" href="#id52" title="Link to this heading">¶</a></h4>
+<p>The first light curve above demonstrates a saturation ghost artifact, and the second light curve suffers from another kind of artifact. These artifacts were identified and affected data masked after ZTF began, but data from earlier releases were not retroactively masked. This produces the apparent cutoff in variability after a certain point in time.</p>
+</section>
+<section id="id53">
+<h4>Light curve characteristics<a class="headerlink" href="#id53" title="Link to this heading">¶</a></h4>
+<p>The light curves appear to be “flaring” with departures from the median by multiple magnitudes which suddenly stop in later data. This cutoff corresponds to the time when a new method of processing the data was used to mask affected points.</p>
+</section>
+</section>
+<section id="id54">
+<h3>References and further reading:<a class="headerlink" href="#id54" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://irsa.ipac.caltech.edu/data/ZTF/docs/ztf_explanatory_supplement.pdf">ZTF Explanatory Supplement (esp. Appendix B)</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="scanner.html"
+       title="previous chapter">← Guide for Fritz Scanners</a>
+  </li>
+  <li class="next">
+    <a href="allocation.html"
+       title="next chapter">ACCESS allocation management →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

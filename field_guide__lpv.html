@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Long Period Variables (lpv)</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Long Period Variables (lpv)</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="long-period-variables-lpv">
+<h1>Long Period Variables (lpv)<a class="headerlink" href="#long-period-variables-lpv" title="Link to this heading">¶</a></h1>
+<p>Long Period Variables have periods over several tens of days.
+They incorporate various groups of cool luminous pulsators.
+The canonical example is Mira.</p>
+<section id="classification-and-numbers">
+<h2>Classification and numbers<a class="headerlink" href="#classification-and-numbers" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>pulsator</p></li>
+</ul>
+</li>
+<li><p>Subtypes</p>
+<ul>
+<li><p>Miras</p></li>
+<li><p>Semiregulars</p></li>
+<li><p>OSARGs - OGLE Small Amplitude Red Giants (some astronomers do not include these under LPVs)</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>5</sup> expected in ZTF data</p></li>
+<li><p>Non LPV wth Long Periods</p>
+<ul>
+<li><p>RV Tau - Cepheid IIs</p></li>
+</ul>
+</li>
+<li><p>Other possible confusions</p>
+<ul>
+<li><p>YSOs - their variations tend to be over shorter periods</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ztf-light-curves">
+<h2>ZTF light curves<a class="headerlink" href="#ztf-light-curves" title="Link to this heading">¶</a></h2>
+<p><img alt="ZTF lpv" src="_images/mira.png" />
+<img alt="ZTF lpv" src="_images/srv.png" /></p>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Long period variables have periods from several tens of days to over thousand day and are
+easy to identify due to the slow variations.</p>
+</section>
+<section id="light-curve-characteristics">
+<h3>Light curve characteristics<a class="headerlink" href="#light-curve-characteristics" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>period range: 100-1000 days</p></li>
+<li><p>amplitude: over a mag (Mira), or a few tenths of a mag to 1 or 2 mags (semiregulars)</p></li>
+<li><p>light curve shape:</p>
+<ul>
+<li><p>periodic sinusoidal (Mira)</p></li>
+<li><p>semiregular (Semiregular)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="other-characteristics-and-selection-methods">
+<h3>Other characteristics and selection methods<a class="headerlink" href="#other-characteristics-and-selection-methods" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>intrinsic lpv colors: red</p></li>
+<li><p>absolute magnitude:</p></li>
+</ul>
+<p><img alt="HR diagram of LPV" src="_images/hr__lpv.png" /></p>
+<p><img alt="RA/Dec diagram of LPV" src="_images/radec__lpv.png" /></p>
+</section>
+</section>
+<section id="references-and-further-reading">
+<h2>References and further reading:<a class="headerlink" href="#references-and-further-reading" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Mowlawi et al., 2018, A&amp;A 618, A58, The first Gaia catalogue of long-period variable candidates <a class="reference external" href="https://arxiv.org/pdf/1805.02035.pdf">arxiv:1805.02035</a></p></li>
+<li><p>Soszynski et al., 2009, AcA, 59, 239S, The Optical Gravitational Lensing Experiment. The OGLE-III Catalog of Variable Stars. IV. Long-Period Variables in the Large Magellanic Cloud <a class="reference external" href="https://arxiv.org/pdf/0910.1354.pdf">arxix:0910.1354</a></p></li>
+<li><p>Soszynski et al., 2008, AcA, 58, 293S, The Optical Gravitational Lensing Experiment. The OGLE-III Catalog of Variable Stars. II.Type II Cepheids and Anomalous Cepheids in the Large Magellanic Cloud <a class="reference external" href="https://arxiv.org/pdf/0811.3636.pdf">arxiv:0811.3636</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

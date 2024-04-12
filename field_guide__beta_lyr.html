@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Beta Lyr (blyr)</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Beta Lyr (blyr)</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="beta-lyr-blyr">
+<h1>Beta Lyr (blyr)<a class="headerlink" href="#beta-lyr-blyr" title="Link to this heading">¶</a></h1>
+<p>Semi-detached eclipsing binaries (also called <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_Lyrae_variable">beta Lyrae variables</a>) are binary star systems (i.e. two stars that are in orbit around each other) that are aligned such that they eclipse each other relative to our line of sight from the Earth. Unlike detached EBs, semi-detatched systems are so close to each other that the shape of (at least one of) the stars in the system are distorted, giving rise to the smooth periodic variations even when the system is not eclipsing.</p>
+<section id="classification-and-numbers">
+<h2>Classification and numbers<a class="headerlink" href="#classification-and-numbers" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>periodic</p></li>
+<li><p>binary</p></li>
+<li><p>eclipsing</p></li>
+</ul>
+</li>
+<li><p>Occurrence rate: very common, about 10<sup>5</sup> expected in ZTF data</p></li>
+</ul>
+</section>
+<section id="ztf-light-curves">
+<h2>ZTF light curves<a class="headerlink" href="#ztf-light-curves" title="Link to this heading">¶</a></h2>
+<p><img alt="ZTF betalyr" src="_images/beta_lyr.png" /></p>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Any type of star can be in an eclipsing binary (so they may be small, large, hot, cool, etc.), which in turn can lead to a large range in eclipse amplitudes (though typically these are between 0.1 and ~1 mag, with most in the ~0.3 to 0.75 mag range) or eclipse periods (though our observations are typically only sensitive to periods between 0.1 to ~20 days).</p>
+</section>
+<section id="light-curve-characteristics">
+<h3>Light curve characteristics<a class="headerlink" href="#light-curve-characteristics" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>periodic variable</p></li>
+<li><p>Range of amplitudes (~0.2 to &gt;1 mag)</p></li>
+<li><p>Intermediate periods (log Period between -0.5 and 1.4)</p></li>
+<li><p>light curve shape: EB, round or sinusoidal light curves, with imposed “V-shape” dips in the phase folded light curve</p></li>
+</ul>
+<p><img alt="HR diagram of Beta Lyrae" src="_images/hr__beta_lyr.png" /></p>
+<p><img alt="Period histogram of Beta Lyrae" src="_images/period__beta_lyr.png" /></p>
+</section>
+</section>
+<section id="references-and-further-reading">
+<h2>References and further reading:<a class="headerlink" href="#references-and-further-reading" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Sterken &amp; Jasschek: Light curves of variable stars</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

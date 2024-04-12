@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Variable stars (vnv)</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Variable stars (vnv)</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="variable-stars-vnv">
+<h1>Variable stars (vnv)<a class="headerlink" href="#variable-stars-vnv" title="Link to this heading">¶</a></h1>
+<p>Variable stars are objects whose brightness is varying at a statistically significant level.
+ZTF has statistical measurements depend on magnitude: down to ~10 millimagnitudes for bright stars and &gt;0.1 mag for objects near the detection limit.
+Many astrophysical objects exhibit variable behavior, including periodic variables such as eclipsing binaries, pulsators, etc, and non-periodic variables such as AGN and YSOs.</p>
+<section id="classification-and-numbers">
+<h2>Classification and numbers<a class="headerlink" href="#classification-and-numbers" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Subtypes</p>
+<ul>
+<li><p>Irregular</p></li>
+<li><p>Flaring</p></li>
+<li><p>Periodic</p></li>
+<li><p>Dipping</p></li>
+<li><p>Long Time Scale</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ztf-light-curves">
+<h2>ZTF light curves<a class="headerlink" href="#ztf-light-curves" title="Link to this heading">¶</a></h2>
+<p><img alt="ZTF variable" src="_images/variable.png" /></p>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Most stars are likely to be variable at some level. Therefore, variable is defined to be those varying at a statistically varying level, with millimagnitude to magnitude level variations.</p>
+</section>
+<section id="light-curve-characteristics">
+<h3>Light curve characteristics<a class="headerlink" href="#light-curve-characteristics" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>amplitude: varies from survey precision to more than a magnitude</p></li>
+</ul>
+<p><img alt="HR diagram of Variable" src="_images/hr__variable.png" /></p>
+<p><img alt="RA/Dec diagram of Variable" src="_images/radec__variable.png" /></p>
+</section>
+</section>
+<section id="references-and-further-reading">
+<h2>References and further reading:<a class="headerlink" href="#references-and-further-reading" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Jayasinghe et al., 2018, MNRAS 447 3, The ASAS-SN catalogue of variable stars I: The Serendipitous Survey <a class="reference external" href="https://arxiv.org/pdf/1803.01001.pdf">arxiv:1803.01001</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

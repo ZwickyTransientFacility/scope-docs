@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>SCoPe script guide</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Guide for Fritz Scanners" href="scanner.html" />
+  <link rel="prev" title="Usage" href="usage.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">SCoPe script guide</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#configuration" class="reference internal">Configuration</a></li>
+                
+                  <li class="toctree-l2"><a href="#training" class="reference internal">Training</a></li>
+                
+                  <li class="toctree-l2"><a href="#generating-features" class="reference internal">Generating Features</a></li>
+                
+                  <li class="toctree-l2"><a href="#running-inference" class="reference internal">Running Inference</a></li>
+                
+                  <li class="toctree-l2"><a href="#combining-predictions" class="reference internal">Combining Predictions</a></li>
+                
+                  <li class="toctree-l2"><a href="#classifying-variables-near-gcn-transient-candidates" class="reference internal">Classifying variables near GCN transient candidates</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>SCoPe script guide</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="usage.html"
+       title="previous chapter">← Usage</a>
+  </li>
+  <li class="next">
+    <a href="scanner.html"
+       title="next chapter">Guide for Fritz Scanners →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="scope-script-guide">
+<h1>SCoPe script guide<a class="headerlink" href="#scope-script-guide" title="Link to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">hpc_files</span></code> directory in the <code class="docutils literal notranslate"><span class="pre">scope-ml</span></code> repository contains scripts, files and directory structures that can be used to quick-start running SCoPe on HPC resources (like SDSC Expanse or NCSA Delta). This page documents the constituents of this directory and provides a high-level overview of what the scripts do and how to use them.  After installing SCoPe, all the contents of <code class="docutils literal notranslate"><span class="pre">hpc_files</span></code> can be placed within the <code class="docutils literal notranslate"><span class="pre">scope</span></code> directory generated by the <code class="docutils literal notranslate"><span class="pre">scope-initialize</span></code> command.</p>
+<p>Note that data files are not included in the <code class="docutils literal notranslate"><span class="pre">hpc_files</span></code> directory. The main files necessary to run the scripts detailed below are listed here and available on <a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.8410825">Zenodo</a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">trained_models_dnn</span></code> and <code class="docutils literal notranslate"><span class="pre">trained_models_xgb</span></code>: download on Zenodo, unzip, and place directories into <code class="docutils literal notranslate"><span class="pre">models_dnn</span></code> and <code class="docutils literal notranslate"><span class="pre">models_xgb</span></code> directories, respectively</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">training_set.parquet</span></code>: download on Zenodo and place into the directory called <code class="docutils literal notranslate"><span class="pre">fritzDownload</span></code></p></li>
+</ul>
+<p>Note also that most included scripts and directories can also be generated from scratch using the following SCoPe scripts: <code class="docutils literal notranslate"><span class="pre">train-algorithm-slurm</span></code>, <code class="docutils literal notranslate"><span class="pre">generate-features-slurm</span></code>, <code class="docutils literal notranslate"><span class="pre">run-inference-slurm</span></code>, and <code class="docutils literal notranslate"><span class="pre">combine-preds-slurm</span></code>. The directories generated by these scripts generally are populated with two subdirectories: <code class="docutils literal notranslate"><span class="pre">logs</span></code> to contain slurm logs, and <code class="docutils literal notranslate"><span class="pre">slurm</span></code> to contain slurm scripts.</p>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">hpc_config.yaml</span></code> file contains the settings that have been used for SCoPe through April 2024. This file can be renamed to <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>, overwriting the standard file generated by <code class="docutils literal notranslate"><span class="pre">scope-initialize</span></code> and fast-tracking HPC runs. Tokens for for <strong>kowalski</strong>, <strong>wandb</strong> and <strong>fritz</strong> should be obtained and added to this file to enable SCoPe code to run.</p>
+<p>It is generally advisable to run SCoPe scripts from the main <code class="docutils literal notranslate"><span class="pre">scope</span></code> directory that contains your config file. You can also provide the <code class="docutils literal notranslate"><span class="pre">--config-path</span></code> argument to any script. Keep in mind that the code will default to checking your current directory for a file called <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> if you have not specified this argument.</p>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Link to this heading">¶</a></h2>
+<section id="training-scripts-train-dnn-dr16-sh-and-train-xgb-dr16-sh">
+<h3>Training scripts: <code class="docutils literal notranslate"><span class="pre">train_dnn_DR16.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">train_xgb_DR16.sh</span></code><a class="headerlink" href="#training-scripts-train-dnn-dr16-sh-and-train-xgb-dr16-sh" title="Link to this heading">¶</a></h3>
+<p>Each of these scripts can be generated with <code class="docutils literal notranslate"><span class="pre">create-training-script</span></code>. They contain several calls to <code class="docutils literal notranslate"><span class="pre">scope-train</span></code> and initially served as the primary way to sequentially train each model. When <code class="docutils literal notranslate"><span class="pre">train-algorithm-job-submission</span></code> is run to train all classifiers in parallel, these scripts are parsed to identify the tags, group name and algorithm to pass to the training code.</p>
+</section>
+<section id="directories-dnn-training-and-xgb-training">
+<h3>Directories: <code class="docutils literal notranslate"><span class="pre">dnn_training</span></code> and <code class="docutils literal notranslate"><span class="pre">xgb_training</span></code><a class="headerlink" href="#directories-dnn-training-and-xgb-training" title="Link to this heading">¶</a></h3>
+<p>These two directories are generated when running <code class="docutils literal notranslate"><span class="pre">train-algorithm-slurm</span></code>. The <code class="docutils literal notranslate"><span class="pre">slurm</span></code> subdirectories within each one are populated with three example scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm_sing.sub</span></code>: trains a single classifier (specified with the <code class="docutils literal notranslate"><span class="pre">--tag</span></code> argument) using <code class="docutils literal notranslate"><span class="pre">scope-train</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm.sub</span></code>: uses a wildcard to serve as a training script for any <code class="docutils literal notranslate"><span class="pre">--tag</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm_submission.sub</span></code>: runs the <code class="docutils literal notranslate"><span class="pre">train-algorithm-job-submission</span></code> python code to submit training jobs for all classifiers, referencing the training scripts mentioned above</p></li>
+</ul>
+</section>
+<section id="output-trained-models-in-models-dnn-and-models-xgb">
+<h3>Output: trained models in <code class="docutils literal notranslate"><span class="pre">models_dnn</span></code> and <code class="docutils literal notranslate"><span class="pre">models_xgb</span></code><a class="headerlink" href="#output-trained-models-in-models-dnn-and-models-xgb" title="Link to this heading">¶</a></h3>
+<p>Trained models are saved in these two directories. The <code class="docutils literal notranslate"><span class="pre">--group</span></code> name passed to the training code will determine the subdirectory where the models are saved. Within this, each classifier gets its own subdirectory that includes the model files, diagnostic plots, and feature importance data (XGB only).</p>
+<p><strong>To run inference with the latest trained models, download <code class="docutils literal notranslate"><span class="pre">trained_dnn_models.zip</span></code> and <code class="docutils literal notranslate"><span class="pre">trained_xgb_models.zip</span></code> from Zenodo and unzip them within the corresponding <code class="docutils literal notranslate"><span class="pre">models_dnn</span></code> or <code class="docutils literal notranslate"><span class="pre">models_xgb</span></code> directory.</strong></p>
+</section>
+</section>
+<section id="generating-features">
+<h2>Generating Features<a class="headerlink" href="#generating-features" title="Link to this heading">¶</a></h2>
+<section id="field-by-field-feature-generation">
+<h3>Field-by-field feature generation<a class="headerlink" href="#field-by-field-feature-generation" title="Link to this heading">¶</a></h3>
+<p>The primary way to generate feature with SCoPe is by specifying a specific ZTF field to run. The following directories contain example slurm scripts to perform this process.</p>
+<section id="directories-generated-features-new-generated-features-delta">
+<h4>Directories: <code class="docutils literal notranslate"><span class="pre">generated_features_new</span></code>, <code class="docutils literal notranslate"><span class="pre">generated_features_delta</span></code><a class="headerlink" href="#directories-generated-features-new-generated-features-delta" title="Link to this heading">¶</a></h4>
+<p>Each of these directories can be generated with <code class="docutils literal notranslate"><span class="pre">generate-features-slurm</span></code>. <code class="docutils literal notranslate"><span class="pre">generated_features_new</span></code> has been used extensively for SDSC Expanse jobs, while <code class="docutils literal notranslate"><span class="pre">generated_features_delta</span></code> contains experimental slurm scripts for the NCSA Delta resource. The <code class="docutils literal notranslate"><span class="pre">slurm</span></code> subdirectories within each one are populated with a data file and three example scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm.dat</span></code>: “quadrant file”, generated using <code class="docutils literal notranslate"><span class="pre">check-quads-for-sources</span></code>, mapping each field/ccd/quadrant combination to an integer job number. Files names for DR16, DR19 and DR20 are also included. The generic <code class="docutils literal notranslate"><span class="pre">slurm.dat</span></code> file is identical to the DR20 file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm_sing.sub</span></code>: generates features for a single field, CCD, and quad (specified with <code class="docutils literal notranslate"><span class="pre">--field</span></code>, <code class="docutils literal notranslate"><span class="pre">--ccd</span></code>, and <code class="docutils literal notranslate"><span class="pre">--quad</span></code> arguments) using <code class="docutils literal notranslate"><span class="pre">generate-features</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm.sub</span></code>: uses a wildcard to serve as a feature generation script for any <code class="docutils literal notranslate"><span class="pre">--quadrant-index</span></code> in <code class="docutils literal notranslate"><span class="pre">slurm.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm_submission.sub</span></code>: runs the <code class="docutils literal notranslate"><span class="pre">generate-features-job-submission</span></code> python code to submit feature generation jobs for all config-specified fields (<code class="docutils literal notranslate"><span class="pre">feature_generation:</span> <span class="pre">fields_to_run:</span></code>) while excluding fields listed in <code class="docutils literal notranslate"><span class="pre">fields_to_exclude:</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="lightcurve-by-lightcurve-feature-generation">
+<h3>Lightcurve-by-lightcurve feature generation<a class="headerlink" href="#lightcurve-by-lightcurve-feature-generation" title="Link to this heading">¶</a></h3>
+<p>Another way to run SCoPe feature generation is to provide individual ZTF lightcurve IDs instead of fields. This requires some data wrangling to put the source list in the appropriate format for SCoPe to recognize.</p>
+<section id="notebook-underms-data-wrangling-notebook-ipynb">
+<h4>Notebook: <code class="docutils literal notranslate"><span class="pre">underMS_data_wrangling_notebook.ipynb</span></code><a class="headerlink" href="#notebook-underms-data-wrangling-notebook-ipynb" title="Link to this heading">¶</a></h4>
+<p>This notebook contains an example on wrangling a list of designations, right ascensions and declinations into a SCoPe-friendly format. This notebook demonstrates running a cone search for all ZTF lightcurves within a specified radius and then formatting column names as SCoPe requires. The notebook then saves the resulting lightcurve list in batches so the feature generation process does not time out when running on SDSC Expanse.</p>
+</section>
+<section id="directory-generated-features-underms">
+<h4>Directory: <code class="docutils literal notranslate"><span class="pre">generated_features_underMS</span></code><a class="headerlink" href="#directory-generated-features-underms" title="Link to this heading">¶</a></h4>
+<p>Once the lightcurve lists are generated and saved (in this example to the <code class="docutils literal notranslate"><span class="pre">underMS_ids_DR20</span></code> subdirectory), the following slurm script can be repeatedly queues to run feature generation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dr20_slurm.sub</span></code>: uses a wildcard to serve as a feature generation script for any index (<code class="docutils literal notranslate"><span class="pre">$IDX</span></code>) in the batched filenames. For example, run <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">--export=IDX=0</span> <span class="pre">dr20_slurm.sub</span></code> to run feature generation on <code class="docutils literal notranslate"><span class="pre">sources_ids_2arcsec_renamed_0.parquet</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="general-feature-generation-advice-troubleshooting">
+<h3>General feature generation advice/troubleshooting<a class="headerlink" href="#general-feature-generation-advice-troubleshooting" title="Link to this heading">¶</a></h3>
+<p>The following advice and troubleshooting list is based on running ~70 fields’ worth of feature generation on <a class="reference external" href="https://www.sdsc.edu/support/user_guides/expanse.html">SDSC Expanse</a> resources. It may need to be adjusted when running on other resources.</p>
+<section id="ensuring-all-quads-run-successfully">
+<h4>Ensuring all quads run successfully<a class="headerlink" href="#ensuring-all-quads-run-successfully" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>When a field/ccd/quad job is queued to run, an empty file with a <code class="docutils literal notranslate"><span class="pre">.running</span></code> extension will be saved. The code uses this file to keep track of which fields/ccds/quads have been queued for feature generation. Note that the existence of this file does not mean that feature generation necessarily completed; in some cases, the job may fail. It is important to verify that feature generation actually succeeded for all quads in a field. One may do this either by manually counting the files and comparing with expectations, or by re-running feature generation job submission for the same fields while setting the <code class="docutils literal notranslate"><span class="pre">--reset-running</span></code> flag (assuming all jobs have concluded). This will re-submit any jobs that did not produce the requisite <code class="docutils literal notranslate"><span class="pre">.parquet</span></code> file or conclude immediately if all jobs are complete.</p></li>
+</ul>
+</section>
+<section id="fields-with-10-000-000-lightcurves">
+<h4>Fields with &gt; 10,000,000 lightcurves<a class="headerlink" href="#fields-with-10-000-000-lightcurves" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Some fields have a particularly large number of lightcurves, especially those near the Galactic Plane. On the Expanse <code class="docutils literal notranslate"><span class="pre">gpu-shared</span></code> partition, there have been out-of-memory issues when using the standard <code class="docutils literal notranslate"><span class="pre">91G</span></code> of memory for fields with more than around 10,000,000 lightcurves. To avoid lost GPU time, identify these fields ahead of time using the included <code class="docutils literal notranslate"><span class="pre">DR19_field_counts.json</span></code> file. (This file was generated by running <code class="docutils literal notranslate"><span class="pre">scope.utils.get_field_count</span></code> on the <code class="docutils literal notranslate"><span class="pre">DR19_catalog_completeness.json</span></code> file, which itself was obtained using <code class="docutils literal notranslate"><span class="pre">tools.generate_features_slurm.check_quads_for_sources</span></code>.) Next, scale up the requested memory in <code class="docutils literal notranslate"><span class="pre">slurm.sub</span></code> proportional to the number of lightcurves in the field divided by 10,000,000. Scale down the <code class="docutils literal notranslate"><span class="pre">--max-instances</span></code> argument in <code class="docutils literal notranslate"><span class="pre">slurm_submission.dat</span></code> by the same fraction to avoid running into cluster limitations on memory requested per user. Note that as a result of this scaling, “large” fields will take more real time to run than they would if the maximum number of instances could be simultaneously used.</p></li>
+</ul>
+</section>
+<section id="kowalski-query-limitations">
+<h4>Kowalski query limitations<a class="headerlink" href="#kowalski-query-limitations" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Note that while some compute resources may offer many cores that could parallelize and speed up Kowalski queries, once this number exceeds ~200 simultaneous queries (e.g. the 20 jobs each with 9 cores each that we currently run in parallel), there will begin to be failed queries and wasted compute time.</p></li>
+</ul>
+</section>
+<section id="path-to-scope-code-inputs-outputs-should-be-the-same">
+<h4>Path to scope code/inputs/outputs should be the same<a class="headerlink" href="#path-to-scope-code-inputs-outputs-should-be-the-same" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>While the config file supports specifying a <code class="docutils literal notranslate"><span class="pre">path_to_features</span></code> and <code class="docutils literal notranslate"><span class="pre">path_to_preds</span></code> that are unique from the code installation location, it is easiest to install <code class="docutils literal notranslate"><span class="pre">scope-ml</span></code> in the same directory where the inputs will be stored and outputs will be written. On a cluster, make sure this is not the home or scratch directory, but instead the project storage location.</p></li>
+</ul>
+</section>
+<section id="lightcurve-by-lightcurve-memory-requirements">
+<h4>Lightcurve-by-lightcurve memory requirements<a class="headerlink" href="#lightcurve-by-lightcurve-memory-requirements" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>For lightcurve-by-lightcurve feature generation, try to limit the number of lightcurves in a batch to 100,000 and increase the memory to <code class="docutils literal notranslate"><span class="pre">182G</span></code>. The current code requires the user to manually run <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> for each batch file, modifying the <code class="docutils literal notranslate"><span class="pre">--export=IDX=N</span></code> argument for each <code class="docutils literal notranslate"><span class="pre">N</span></code> in the batched filenames.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="running-inference">
+<h2>Running Inference<a class="headerlink" href="#running-inference" title="Link to this heading">¶</a></h2>
+<section id="inference-scripts-get-all-preds-dnn-dr16-sh-and-get-all-preds-xgb-dr16-sh">
+<h3>Inference scripts: <code class="docutils literal notranslate"><span class="pre">get_all_preds_dnn_DR16.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">get_all_preds_xgb_DR16.sh</span></code><a class="headerlink" href="#inference-scripts-get-all-preds-dnn-dr16-sh-and-get-all-preds-xgb-dr16-sh" title="Link to this heading">¶</a></h3>
+<p>Each of these scripts can be generated with <code class="docutils literal notranslate"><span class="pre">create-inference-script</span></code>. They contain a call to <code class="docutils literal notranslate"><span class="pre">run-inference</span></code> can be run on their own to perform inference (one field at a time). They can also be used by running <code class="docutils literal notranslate"><span class="pre">run-inference-job-submission</span></code> to perform inference for all fields in parallel.</p>
+</section>
+<section id="directories-dnn-inference-and-xgb-inference">
+<h3>Directories: <code class="docutils literal notranslate"><span class="pre">dnn_inference</span></code> and <code class="docutils literal notranslate"><span class="pre">xgb_inference</span></code><a class="headerlink" href="#directories-dnn-inference-and-xgb-inference" title="Link to this heading">¶</a></h3>
+<p>These two directories are generated when running <code class="docutils literal notranslate"><span class="pre">run-inference-slurm</span></code>. The <code class="docutils literal notranslate"><span class="pre">slurm</span></code> subdirectories within each one are populated with three example scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm_sing.sub</span></code>: runs inference on a single field specified in file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm.sub</span></code>: uses a wildcard to serve as an inference script for any field</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm_submission.sub</span></code>: runs the <code class="docutils literal notranslate"><span class="pre">run-inference-job-submission</span></code> python code to submit inference jobs for all config-specified fields (<code class="docutils literal notranslate"><span class="pre">inference:</span> <span class="pre">fields_to_run:</span></code>) while excluding fields listed in <code class="docutils literal notranslate"><span class="pre">fields_to_exclude:</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="combining-predictions">
+<h2>Combining Predictions<a class="headerlink" href="#combining-predictions" title="Link to this heading">¶</a></h2>
+<section id="directory-combine-preds">
+<h3>Directory: <code class="docutils literal notranslate"><span class="pre">combine_preds</span></code><a class="headerlink" href="#directory-combine-preds" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">slurm</span></code> subdirectory here contains a script to combine the predictions for the DNN and XGB algorithms:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slurm.sub</span></code>: run <code class="docutils literal notranslate"><span class="pre">combine-preds</span></code> for all config-specified fields (<code class="docutils literal notranslate"><span class="pre">inference:</span> <span class="pre">fields_to_run:</span></code>) while excluding fields listed in <code class="docutils literal notranslate"><span class="pre">fields_to_exclude:</span></code>, writing both parquet and CSV files</p></li>
+</ul>
+</section>
+</section>
+<section id="classifying-variables-near-gcn-transient-candidates">
+<h2>Classifying variables near GCN transient candidates<a class="headerlink" href="#classifying-variables-near-gcn-transient-candidates" title="Link to this heading">¶</a></h2>
+<p>One special application of SCoPe is to classify variable sources that are near (in angular separation) to GCN transient candidates listed on fritz. In this workflow, small-scale feature generation is run on SDSC Expanse before running inference locally and uploading any high-confidence classifications to fritz (see <strong>Guide for Fritz Scanners</strong> for more details).</p>
+<section id="gcn-inference-scripts-get-all-preds-dnn-gcn-sh-get-all-preds-xgb-gcn-sh">
+<h3>GCN inference scripts: <code class="docutils literal notranslate"><span class="pre">get_all_preds_dnn_GCN.sh</span></code>, <code class="docutils literal notranslate"><span class="pre">get_all_preds_xgb_GCN.sh</span></code><a class="headerlink" href="#gcn-inference-scripts-get-all-preds-dnn-gcn-sh-get-all-preds-xgb-gcn-sh" title="Link to this heading">¶</a></h3>
+<p>These scripts are nearly identical to the inference scripts referenced above, but inference results are saved to different directories.</p>
+</section>
+<section id="directory-generated-features-gcn-sources">
+<h3>Directory: <code class="docutils literal notranslate"><span class="pre">generated_features_GCN_sources</span></code><a class="headerlink" href="#directory-generated-features-gcn-sources" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">slurm</span></code> subdirectory within contains two example scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gpu-debug_slurm.sub</span></code>: uses wildcards to run small-scale feature generation for a list of sources from a given GCN <code class="docutils literal notranslate"><span class="pre">dateobs</span></code>. This is the script that is run by default, since the <code class="docutils literal notranslate"><span class="pre">gpu-debug</span></code> partition on Expanse offers enough resources with shorter wait times than <code class="docutils literal notranslate"><span class="pre">gpu-shared</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpu-shared_slurm.sub</span></code>: the same as <code class="docutils literal notranslate"><span class="pre">gpu-debug_slurm.sub</span></code>, but running on the <code class="docutils literal notranslate"><span class="pre">gpu-shared</span></code> partition of Expanse.</p></li>
+</ul>
+</section>
+<section id="script-gcn-cronjob-py">
+<h3>Script: <code class="docutils literal notranslate"><span class="pre">gcn_cronjob.py</span></code><a class="headerlink" href="#script-gcn-cronjob-py" title="Link to this heading">¶</a></h3>
+<p>See more details about how this script can be run automatically in the <strong>Usage/Running automated analyses</strong> section of the documentation.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="usage.html"
+       title="previous chapter">← Usage</a>
+  </li>
+  <li class="next">
+    <a href="scanner.html"
+       title="next chapter">Guide for Fritz Scanners →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

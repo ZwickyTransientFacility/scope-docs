@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>ACCESS allocation management</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Data Releases on Zenodo" href="zenodo.html" />
+  <link rel="prev" title="Field guide" href="field_guide.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">ACCESS allocation management</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#viewing-resources" class="reference internal">Viewing Resources</a></li>
+                
+                  <li class="toctree-l2"><a href="#making-requests" class="reference internal">Making Requests</a></li>
+                
+                  <li class="toctree-l2"><a href="#anticipating-trends" class="reference internal">Anticipating Trends</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>ACCESS allocation management</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="field_guide.html"
+       title="previous chapter">← Field guide</a>
+  </li>
+  <li class="next">
+    <a href="zenodo.html"
+       title="next chapter">Data Releases on Zenodo →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="access-allocation-management">
+<h1>ACCESS allocation management<a class="headerlink" href="#access-allocation-management" title="Link to this heading">¶</a></h1>
+<p>This project (and others in the group) are supported in large part by computing resource allocations, e.g. from NSF ACCESS. When our group is granted ACCESS credits, we need to exchange them for the resources our group requires. This guide explains some details about that process.</p>
+<section id="viewing-resources">
+<h2>Viewing Resources<a class="headerlink" href="#viewing-resources" title="Link to this heading">¶</a></h2>
+<p>Users with the Allocation Manager role can view available allocations on the <a class="reference external" href="https://allocations.access-ci.org/">ACCESS website</a>. The different tabs show available resources, current users, and request history. The figure below shows the “Credits + Resouces” tab that is useful for viewing how much of each allocated resource remains.</p>
+<img src="data/access_credit_view.png" alt="ACCESS Allocation UI" width="900"/>
+</section>
+<section id="making-requests">
+<h2>Making Requests<a class="headerlink" href="#making-requests" title="Link to this heading">¶</a></h2>
+<p>To request more resources, increase the associated “Balance” box on the right to the desired amount. Doing this will preview the exchange of credits for resources in the visualization of the balances. To submit the request, add a 1-2 sentence justification in the explanation box near the bottom of the page. This justification should mention what efforts the exchange will support and the basic reasons why the resources are being requested (at an approximate level). For example, the justification below accompanied a request for 5,000 Expanse GPUh:</p>
+<p><em>We will continue to perform GPU-accelerated time series feature generation on 20 more ZTF fields containing ~56 million light curves. At ~0.25s per lightcurve, and considering the added memory requirements of some fields leading to greater credit expenditure, we request an additional 5,000 Expanse GPUh.</em></p>
+<p>Note that it is always possible to turn unused resources back into the equivalent amount of credits. Use the <a class="reference external" href="https://allocations.access-ci.org/exchange_calculator">Exchange Calculator</a> to calculate the exchange rates between credits and resources. From experience, ACCESS prefers not to allocate vast quantities of a single resource at once. Instead, more manageable requests should be made at regular intervals.</p>
+</section>
+<section id="anticipating-trends">
+<h2>Anticipating Trends<a class="headerlink" href="#anticipating-trends" title="Link to this heading">¶</a></h2>
+<p>Clicking the chart buttons under the Usage column will show which users used how much of each resource. Over time, trends will tend to stabilize and make subsequent exchange requests more predictible. When managing the allocation, try to keep resources consistently available so projects do not get interrupted. If a resource is nearing exhaustion, Allocation Managers will receive an email from ACCESS with this information.</p>
+<section id="optimizing-resource-usage">
+<h3>Optimizing resource usage<a class="headerlink" href="#optimizing-resource-usage" title="Link to this heading">¶</a></h3>
+<p>If users seem to be using more resources than they need for their given project, reach out to ensure they are optimizing their slurm scripts. Many ACCESS resources have a basic unit that they consider to be 1 Service Unit (SU); for example, on SDSC Expanse 1 CPU SU = 1 core with 2GB of memory for one hour. Any additional memory used will scale up the CPU SU accounting charge by the ratio of the requested memory amount to 2 GB. 1 Expanse GPU SU is 1 GPU, &lt;10CPUs, and &lt;92G of memory. Additional GPUs/CPUs/memory beyond these levels will likewise scale up the GPU SUs charged to the group account.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="field_guide.html"
+       title="previous chapter">← Field guide</a>
+  </li>
+  <li class="next">
+    <a href="zenodo.html"
+       title="next chapter">Data Releases on Zenodo →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

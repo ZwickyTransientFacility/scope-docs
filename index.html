@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>ZTF Variable Source Classification Project</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Installation/Developer Guidelines" href="developer.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="#" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+    
+    <li>ZTF Variable Source Classification Project</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="next">
+    <a href="developer.html"
+       title="next chapter">Installation/Developer Guidelines →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="ztf-variable-source-classification-project">
+<h1>ZTF Variable Source Classification Project<a class="headerlink" href="#ztf-variable-source-classification-project" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Installation/Developer Guidelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#science-users">Science users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#developers-contributors">Developers/contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#modify-config-yaml">Modify <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#training">Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#plotting-classifier-performance">Plotting Classifier Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#examining-predictions">Examining predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#download-ids-for-ztf-fields-ccds-quadrants">Download ids for ZTF fields/CCDs/quadrants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#download-scope-features-for-ztf-fields-ccds-quadrants">Download SCoPe features for ZTF fields/CCDs/quadrants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#training-deep-learning-models">Training deep learning models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#running-inference">Running inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#handling-different-file-formats">Handling different file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#mapping-between-column-names-and-fritz-taxonomies">Mapping between column names and Fritz taxonomies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#generating-features">Generating features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#feature-definitions">Feature definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#running-automated-analyses">Running automated analyses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#local-feature-generation-inference">Local feature generation/inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#scope-download-classification">scope-download-classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#scope-download-gcn-sources">scope-download-gcn-sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#scope-upload-classification">scope-upload-classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#scope-manage-annotation">scope-manage-annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#scope-upload-disagreements-deprecated">Scope Upload Disagreements (deprecated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">SCoPe script guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#training">Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#generating-features">Generating Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#running-inference">Running Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#combining-predictions">Combining Predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#classifying-variables-near-gcn-transient-candidates">Classifying variables near GCN transient candidates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scanner.html">Guide for Fritz Scanners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scanner.html#two-classification-taxonomies">Two classification taxonomies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scanner.html#independent-binary-classifiers">Independent binary classifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scanner.html#classification-process">Classification process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scanner.html#classifier-performance">Classifier performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="field_guide.html">Field guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#variable-stars-vnv">Variable stars (vnv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#periodic-variables-pnp">Periodic Variables (pnp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#rr-lyrae-rrlyr">RR Lyrae (rrlyr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#w-uma-wuma">W Uma (wuma)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#delta-scuti-dscu">Delta Scuti (dscu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#classical-cepheids-ceph">Classical Cepheids (ceph)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#cataclysmic-variables-cv">Cataclysmic Variables (cv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#flaring-variables-fla">Flaring variables (fla)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#beta-lyr-blyr">Beta Lyr (blyr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#long-period-variables-lpv">Long Period Variables (lpv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="field_guide.html#bogus-variability-bogus">Bogus variability (bogus)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="allocation.html">ACCESS allocation management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="allocation.html#viewing-resources">Viewing Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="allocation.html#making-requests">Making Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="allocation.html#anticipating-trends">Anticipating Trends</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zenodo.html">Data Releases on Zenodo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zenodo.html#data-product-description">Data product description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zenodo.html#preparing-a-new-release">Preparing a new release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zenodo.html#publishing-a-new-release">Publishing a new release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zenodo.html#adding-new-users">Adding new users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="next">
+    <a href="developer.html"
+       title="next chapter">Installation/Developer Guidelines →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Guide for Fritz Scanners</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Field guide" href="field_guide.html" />
+  <link rel="prev" title="SCoPe script guide" href="scripts.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Guide for Fritz Scanners</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#two-classification-taxonomies" class="reference internal">Two classification taxonomies</a></li>
+                
+                  <li class="toctree-l2"><a href="#independent-binary-classifiers" class="reference internal">Independent binary classifiers</a></li>
+                
+                  <li class="toctree-l2"><a href="#classification-process" class="reference internal">Classification process</a></li>
+                
+                  <li class="toctree-l2"><a href="#classifier-performance" class="reference internal">Classifier performance</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Guide for Fritz Scanners</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="scripts.html"
+       title="previous chapter">← SCoPe script guide</a>
+  </li>
+  <li class="next">
+    <a href="field_guide.html"
+       title="next chapter">Field guide →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="guide-for-fritz-scanners">
+<h1>Guide for Fritz Scanners<a class="headerlink" href="#guide-for-fritz-scanners" title="Link to this heading">¶</a></h1>
+<p>This page is a guide the SCoPe classification process. It contains sections on the classification taxonomies we use, definitions of each classification that may be posted to Fritz, An explanation of the binary classifier algorithms we train and the workflow we run on transient candidates, and plots of each classifer’s current precision and recall scores.</p>
+<section id="two-classification-taxonomies">
+<h2>Two classification taxonomies<a class="headerlink" href="#two-classification-taxonomies" title="Link to this heading">¶</a></h2>
+<p>The goal of SCoPe is to use machine learning algorithms to reliably classify each ZTF source with as much detail as possible. The level of classification detail will vary across the broad range of ZTF sources. Factors that can affect the level of source classification include the quantity and quality of the data, the similarity of the training set to the source in question, and the existence of new kinds of variable sources in the data. With this in mind, we adopt two kinds of taxonomies which contain the labels we use to classify ZTF sources.</p>
+<section id="ontological-classifications">
+<h3>Ontological classifications<a class="headerlink" href="#ontological-classifications" title="Link to this heading">¶</a></h3>
+<p>The first taxonomy is ontological and contains specific kinds of astrophysical sources. On Fritz, this is called <code class="docutils literal notranslate"><span class="pre">Sitewide</span> <span class="pre">Taxonomy</span></code>. See the table below for the current ontological classifications, training set abbreviations and definitions, ordered by low to high detail:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>classification</p></th>
+<th class="head"><p>abbreviation</p></th>
+<th class="head"><p>definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pulsator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">puls</span></code></p></td>
+<td><p>Pulsating star</p></td>
+</tr>
+<tr class="row-odd"><td><p>AGN</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">agn</span></code></p></td>
+<td><p>Active Galactic Nucleus</p></td>
+</tr>
+<tr class="row-even"><td><p>YSO</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">yso</span></code></p></td>
+<td><p>Young Stellar Object</p></td>
+</tr>
+<tr class="row-odd"><td><p>CV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cv</span></code></p></td>
+<td><p>Cataclysmic Variable</p></td>
+</tr>
+<tr class="row-even"><td><p>binary</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bis</span></code></p></td>
+<td><p>binary system</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cepheid</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ceph</span></code></p></td>
+<td><p>Cepheid variable star</p></td>
+</tr>
+<tr class="row-even"><td><p>Delta Scu</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dscu</span></code></p></td>
+<td><p>Delta Scu star</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pop II Cepheid</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ceph2</span></code></p></td>
+<td><p>Population II Cepheid variable star</p></td>
+</tr>
+<tr class="row-even"><td><p>RR Lyr</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rrlyr</span></code></p></td>
+<td><p>RR Lyr star</p></td>
+</tr>
+<tr class="row-odd"><td><p>LPV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lpv</span></code></p></td>
+<td><p>Long Period Variable star</p></td>
+</tr>
+<tr class="row-even"><td><p>MS-MS</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">emsms</span></code></p></td>
+<td><p>Eclipsing MS-MS binary</p></td>
+</tr>
+<tr class="row-odd"><td><p>W UMa</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wuma</span></code></p></td>
+<td><p>W UMa binary system</p></td>
+</tr>
+<tr class="row-even"><td><p>Beta Lyr</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blyr</span></code></p></td>
+<td><p>Beta Lyr binary</p></td>
+</tr>
+<tr class="row-odd"><td><p>RS CVn</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rscvn</span></code></p></td>
+<td><p>RS CVn binary</p></td>
+</tr>
+<tr class="row-even"><td><p>BL Her</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blher</span></code></p></td>
+<td><p>BL Her-type Cepheid variable star</p></td>
+</tr>
+<tr class="row-odd"><td><p>RRab</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rrab</span></code></p></td>
+<td><p>RR Lyr ab star</p></td>
+</tr>
+<tr class="row-even"><td><p>RRc</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rrc</span></code></p></td>
+<td><p>RR Lyr c star</p></td>
+</tr>
+<tr class="row-odd"><td><p>RRd</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rrd</span></code></p></td>
+<td><p>RR Lyr d star</p></td>
+</tr>
+<tr class="row-even"><td><p>Mira</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mir</span></code></p></td>
+<td><p>Mira variable star</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">srv</span></code></p></td>
+<td><p>Semi-regular variable star</p></td>
+</tr>
+<tr class="row-even"><td><p>OSARG</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">osarg</span></code></p></td>
+<td><p>OGLE small-amplitude red giant star</p></td>
+</tr>
+<tr class="row-odd"><td><p>W Vir</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wvir</span></code></p></td>
+<td><p>W Vir-type Cepheid variable star</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Refer to the field guide for more information about these classes.</em></p>
+</section>
+<section id="phenomenological-classifications">
+<h3>Phenomenological classifications<a class="headerlink" href="#phenomenological-classifications" title="Link to this heading">¶</a></h3>
+<p>In consideration of the importance of having some information about a source (even if not a definitive ontological classification), we also employ a phenomenological taxonomy with labels that describe light curve-based features. This taxonomy is called <code class="docutils literal notranslate"><span class="pre">SCoPe</span> <span class="pre">Phenomenological</span> <span class="pre">Taxonomy</span></code> on Fritz. See the table below for the current phenomenological classifications, training set abbreviations and definitions:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>classification</p></th>
+<th class="head"><p>abbreviation</p></th>
+<th class="head"><p>definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>variable</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">vnv</span></code></p></td>
+<td><p>Light curve shows variability</p></td>
+</tr>
+<tr class="row-odd"><td><p>periodic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pnp</span></code></p></td>
+<td><p>periodic variability</p></td>
+</tr>
+<tr class="row-even"><td><p>irregular</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">i</span></code></p></td>
+<td><p>irregular variability</p></td>
+</tr>
+<tr class="row-odd"><td><p>eclipsing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">e</span></code></p></td>
+<td><p>eclipsing phenomenology</p></td>
+</tr>
+<tr class="row-even"><td><p>sinusoidal</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sin</span></code></p></td>
+<td><p>sinusoidal phenomenology</p></td>
+</tr>
+<tr class="row-odd"><td><p>sawtooth</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">saw</span></code></p></td>
+<td><p>sawtooth phenomenology</p></td>
+</tr>
+<tr class="row-even"><td><p>long timescale</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">longt</span></code></p></td>
+<td><p>long timescale variability</p></td>
+</tr>
+<tr class="row-odd"><td><p>flaring</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fla</span></code></p></td>
+<td><p>flaring phenomenology</p></td>
+</tr>
+<tr class="row-even"><td><p>EA</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ea</span></code></p></td>
+<td><p>EA eclipsing phenomenology</p></td>
+</tr>
+<tr class="row-odd"><td><p>EB</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">eb</span></code></p></td>
+<td><p>EB eclipsing phenomenology</p></td>
+</tr>
+<tr class="row-even"><td><p>EW</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ew</span></code></p></td>
+<td><p>EW eclipsing phenomenology</p></td>
+</tr>
+<tr class="row-odd"><td><p>bogus</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bogus</span></code></p></td>
+<td><p>bogus variability</p></td>
+</tr>
+<tr class="row-even"><td><p>blend</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blend</span></code></p></td>
+<td><p>blended sources phenomenology</p></td>
+</tr>
+<tr class="row-odd"><td><p>extended</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ext</span></code></p></td>
+<td><p>extended source</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Refer to the field guide for more information about these classes.</em></p>
+</section>
+</section>
+<section id="independent-binary-classifiers">
+<h2>Independent binary classifiers<a class="headerlink" href="#independent-binary-classifiers" title="Link to this heading">¶</a></h2>
+<p>We train a binary classifier for every label in these taxonomies. This choice allows more than one classification to be assigned to a source, often with varying levels of detail. This is important not only due to the practical challenges outlined above, but also because some sources merit more than one classification (e.g. an eclipsing binary system containing a flaring star). The independence of binary classifiers allows for future updates to the taxonomies without a revision of the current results from each existing classifier.</p>
+<p>We classify each ZTF light curve separately in recognition of systematics that may exist between ZTF fields and bands. Before posting results to Fritz, we aggregate these classification results on a source-by-source basis. The details of this workflow are described in the next section.</p>
+</section>
+<section id="classification-process">
+<h2>Classification process<a class="headerlink" href="#classification-process" title="Link to this heading">¶</a></h2>
+<section id="machine-learning-algorithms-training">
+<h3>Machine learning algorithms/training<a class="headerlink" href="#machine-learning-algorithms-training" title="Link to this heading">¶</a></h3>
+<p>We currently employ a convolutional/dense neural network (DNN) and gradient-boosted decision trees (XGBoost, XGB) to perform classification. The process is initially a regression problem, with classifiers assigning a classification probability that ranges between 0 and 1 for each source. We then apply a probability threshold to determine whether to include each source as a positive or negative example when minimizing the binary cross-entropy loss function.</p>
+<p>We trained each binary classifier algorithm using a training set containing ~80,000 sources labeled manually (~170,000 light curves). The training set is available on Fritz in group 1458 (Golden Dataset Unique Sources).</p>
+</section>
+<section id="repeated-workflow-for-transients">
+<h3>Repeated workflow for transients<a class="headerlink" href="#repeated-workflow-for-transients" title="Link to this heading">¶</a></h3>
+<p>The following SCoPe workflow currently runs every two hours as a cron job:</p>
+<ul class="simple">
+<li><p>Query Fritz for GCN events within the last 7 days</p></li>
+<li><p>For each event, query all candidates within the 95% confidence localization</p></li>
+<li><p>For each candidate, query existing ZTF DR16 light curves within 0.5 arcsec</p></li>
+<li><p>For ZTF light curves with 50 or more epochs of data, generate SCoPe features and run through all trained binary classifiers (DNN and XGB)</p></li>
+<li><p>Consolidate light curve classifications by matching Gaia, AllWISE or Pan-STARRS1 IDs, computing the mean probabilities among all light curves for a source.</p>
+<ul>
+<li><p>Each source will now have a set of classifications from both the DNN and XGB algorithms.</p></li>
+</ul>
+</li>
+<li><p>For each ZTF source, compute mean classification probabilities between DNN and XGB results.</p></li>
+<li><p>For classifications having a mean probability ≥ 0.7, post to the candidate page.</p>
+<ul>
+<li><p>SCoPe classifications will be color-coded with blue text (instead of the default black) and will be preceded by the <code class="docutils literal notranslate"><span class="pre">ML:</span> </code> prefix.</p></li>
+<li><p><em><strong>Note that these classifications do not pertain to the candidate itself, but persistent ZTF sources within 0.5 arcsec.</strong></em></p></li>
+<li><p>The time series and phase-folded ZTF light curves used for classification are posted as comments on their associated candidate.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="classifier-performance">
+<h2>Classifier performance<a class="headerlink" href="#classifier-performance" title="Link to this heading">¶</a></h2>
+<p>The bar plots below show the precision and recall metrics for the DNN and XGB classifiers. ‘Missing’ bars indicate classifiers which did not have enough examples to train successfully.
+<img src="data/DNN_performance.png" alt="dnn classifier precision/recall" width="900"/>
+<img src="data/XGB_performance.png" alt="xgb classifier precision/recall" width="900"/></p>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="scripts.html"
+       title="previous chapter">← SCoPe script guide</a>
+  </li>
+  <li class="next">
+    <a href="field_guide.html"
+       title="next chapter">Field guide →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

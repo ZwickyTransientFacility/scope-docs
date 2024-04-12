@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Data Releases on Zenodo</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="License" href="license.html" />
+  <link rel="prev" title="ACCESS allocation management" href="allocation.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Data Releases on Zenodo</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#data-product-description" class="reference internal">Data product description</a></li>
+                
+                  <li class="toctree-l2"><a href="#preparing-a-new-release" class="reference internal">Preparing a new release</a></li>
+                
+                  <li class="toctree-l2"><a href="#publishing-a-new-release" class="reference internal">Publishing a new release</a></li>
+                
+                  <li class="toctree-l2"><a href="#adding-new-users" class="reference internal">Adding new users</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Data Releases on Zenodo</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="allocation.html"
+       title="previous chapter">← ACCESS allocation management</a>
+  </li>
+  <li class="next">
+    <a href="license.html"
+       title="next chapter">License →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="data-releases-on-zenodo">
+<h1>Data Releases on Zenodo<a class="headerlink" href="#data-releases-on-zenodo" title="Link to this heading">¶</a></h1>
+<p>As more ZTF fields receive SCoPe classifications, we make them public on Zenodo. This page describes the data products available and provides a guide to preparing/publishing new data releases. The permanent link for the SCoPe III repository on Zenodo is <a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.8410825">https://zenodo.org/doi/10.5281/zenodo.8410825</a>. This link will always resolve to the latest data release.</p>
+<section id="data-product-description">
+<h2>Data product description<a class="headerlink" href="#data-product-description" title="Link to this heading">¶</a></h2>
+<p>The most recent data release contains these components:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>file</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>field_296_100rows.csv</p></td>
+<td><p>Demo predictions file containing 100 classified light curves</p></td>
+</tr>
+<tr class="row-odd"><td><p>fields.json</p></td>
+<td><p>List of fields in classification catalog, generated when running <code class="docutils literal notranslate"><span class="pre">combine-preds</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>predictions_dnn_xgb_<em>N</em>_fields.zip</p></td>
+<td><p>Zip file containing classification catalog (contains <em>N</em> combined DNN/XGB prediction files in CSV format)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCoPe_classification_demo.ipynb</p></td>
+<td><p>Notebook interacting with demo predictions</p></td>
+</tr>
+<tr class="row-even"><td><p>trained_dnn_models.zip</p></td>
+<td><p>Zip file containing trained DNN models</p></td>
+</tr>
+<tr class="row-odd"><td><p>trained_xgb_models.zip</p></td>
+<td><p>Zip file containing trained XGB models</p></td>
+</tr>
+<tr class="row-even"><td><p>training_set.parquet</p></td>
+<td><p>Parquet file containing training set</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="preparing-a-new-release">
+<h2>Preparing a new release<a class="headerlink" href="#preparing-a-new-release" title="Link to this heading">¶</a></h2>
+<p>To begin a new release draft, click “New version” on the current release. The main difference between releases is the classification catalog Zip file, which adds more ZTF fields over time, along with <code class="docutils literal notranslate"><span class="pre">fields.json</span></code>. Other unchanged elements of the release may be imported from the previous release by clicking “Import files”.</p>
+</section>
+<section id="publishing-a-new-release">
+<h2>Publishing a new release<a class="headerlink" href="#publishing-a-new-release" title="Link to this heading">¶</a></h2>
+<p>To publish a new release after uploading the latest classification catalog, first ensure that all desired files are in place. Then, click “Get a DOI now!” to reserve a version-specific DOI for this release. Additionally, specify the publication date and version in <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code> format.</p>
+<p>Finally, create release notes by clicking “Add description” and choosing “Notes” under the “Type” dropdown. These release notes should specify what has changed from one version to the next.</p>
+</section>
+<section id="adding-new-users">
+<h2>Adding new users<a class="headerlink" href="#adding-new-users" title="Link to this heading">¶</a></h2>
+<p>The “ZTF Source Classification Project” community <a class="reference external" href="https://zenodo.org/communities/ztf-scope">ztf-scope</a> contains the current data repository. Inviting additional Zenodo users to this community as Curators will allow them to manage the repository and create new versions.</p>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="allocation.html"
+       title="previous chapter">← ACCESS allocation management</a>
+  </li>
+  <li class="next">
+    <a href="license.html"
+       title="next chapter">License →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

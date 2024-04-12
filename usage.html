@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Usage</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="SCoPe script guide" href="scripts.html" />
+  <link rel="prev" title="Quick Start Guide" href="quickstart.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Usage</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#download-ids-for-ztf-fields-ccds-quadrants" class="reference internal">Download ids for ZTF fields/CCDs/quadrants</a></li>
+                
+                  <li class="toctree-l2"><a href="#download-scope-features-for-ztf-fields-ccds-quadrants" class="reference internal">Download SCoPe features for ZTF fields/CCDs/quadrants</a></li>
+                
+                  <li class="toctree-l2"><a href="#training-deep-learning-models" class="reference internal">Training deep learning models</a></li>
+                
+                  <li class="toctree-l2"><a href="#running-inference" class="reference internal">Running inference</a></li>
+                
+                  <li class="toctree-l2"><a href="#handling-different-file-formats" class="reference internal">Handling different file formats</a></li>
+                
+                  <li class="toctree-l2"><a href="#mapping-between-column-names-and-fritz-taxonomies" class="reference internal">Mapping between column names and Fritz taxonomies</a></li>
+                
+                  <li class="toctree-l2"><a href="#generating-features" class="reference internal">Generating features</a></li>
+                
+                  <li class="toctree-l2"><a href="#feature-definitions" class="reference internal">Feature definitions</a></li>
+                
+                  <li class="toctree-l2"><a href="#running-automated-analyses" class="reference internal">Running automated analyses</a></li>
+                
+                  <li class="toctree-l2"><a href="#local-feature-generation-inference" class="reference internal">Local feature generation/inference</a></li>
+                
+                  <li class="toctree-l2"><a href="#scope-download-classification" class="reference internal">scope-download-classification</a></li>
+                
+                  <li class="toctree-l2"><a href="#scope-download-gcn-sources" class="reference internal">scope-download-gcn-sources</a></li>
+                
+                  <li class="toctree-l2"><a href="#scope-upload-classification" class="reference internal">scope-upload-classification</a></li>
+                
+                  <li class="toctree-l2"><a href="#scope-manage-annotation" class="reference internal">scope-manage-annotation</a></li>
+                
+                  <li class="toctree-l2"><a href="#scope-upload-disagreements-deprecated" class="reference internal">Scope Upload Disagreements (deprecated)</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Usage</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="quickstart.html"
+       title="previous chapter">← Quick Start Guide</a>
+  </li>
+  <li class="next">
+    <a href="scripts.html"
+       title="next chapter">SCoPe script guide →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
+<section id="download-ids-for-ztf-fields-ccds-quadrants">
+<h2>Download ids for ZTF fields/CCDs/quadrants<a class="headerlink" href="#download-ids-for-ztf-fields-ccds-quadrants" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Create HDF5 file for single CCD/quad pair in a field:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-quad-ids<span class="w"> </span>--catalog<span class="w"> </span>ZTF_source_features_DR16<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--ccd<span class="w"> </span><span class="m">2</span><span class="w"> </span>--quad<span class="w"> </span><span class="m">3</span><span class="w"> </span>--minobs<span class="w"> </span><span class="m">20</span><span class="w"> </span>--skip<span class="w"> </span><span class="m">0</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10000</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create multiple HDF5 files for some CCD/quad pairs in a field:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-quad-ids<span class="w"> </span>--catalog<span class="w"> </span>ZTF_source_features_DR16<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--multi-quads<span class="w"> </span>--ccd-range<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">8</span><span class="w"> </span>--quad-range<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>--minobs<span class="w"> </span><span class="m">20</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10000</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create multiple HDF5 files for all CCD/quad pairs in a field:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-quad-ids<span class="w"> </span>--catalog<span class="w"> </span>ZTF_source_features_DR16<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--multi-quads<span class="w"> </span>--minobs<span class="w"> </span><span class="m">20</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10000</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create single HDF5 file for all sources in a field:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-quad-ids<span class="w"> </span>--catalog<span class="w"> </span>ZTF_source_features_DR16<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--whole-field
+</pre></div>
+</div>
+</section>
+<section id="download-scope-features-for-ztf-fields-ccds-quadrants">
+<h2>Download SCoPe features for ZTF fields/CCDs/quadrants<a class="headerlink" href="#download-scope-features-for-ztf-fields-ccds-quadrants" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>First, run <code class="docutils literal notranslate"><span class="pre">get-quad_ids</span></code> for desired fields/ccds/quads.</p></li>
+<li><p>Download features for all sources in a field:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-features<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--whole-field
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Download features for all sources in a field, imputing missing features using the strategies in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-features<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--whole-field<span class="w"> </span>--impute-missing-features
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Download features for a range of ccd/quads individually:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-features<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--ccd-range<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>--quad-range<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Download features for a single pair of ccd/quad:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>get-features<span class="w"> </span>--field<span class="w"> </span><span class="m">301</span><span class="w"> </span>--ccd-range<span class="w"> </span><span class="m">1</span><span class="w"> </span>--quad-range<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+<section id="training-deep-learning-models">
+<h2>Training deep learning models<a class="headerlink" href="#training-deep-learning-models" title="Link to this heading">¶</a></h2>
+<p>For details on the SCoPe taxonomy and architecture,
+please refer to <a class="reference external" href="https://arxiv.org/pdf/2102.11304.pdf">arxiv:2102.11304</a>.</p>
+<ul class="simple">
+<li><p>The training pipeline can be invoked with the <code class="docutils literal notranslate"><span class="pre">scope.py</span></code> utility. For example:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>scope-train<span class="w"> </span>--tag<span class="w"> </span>vnv<span class="w"> </span>--path-dataset<span class="w"> </span>data/training/dataset.d15.csv<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">64</span><span class="w"> </span>--epochs<span class="w"> </span><span class="m">100</span><span class="w"> </span>--verbose<span class="w"> </span><span class="m">1</span><span class="w"> </span>--pre-trained-model<span class="w"> </span>models/experiment/vnv/vnv.20221117_001502.h5
+</pre></div>
+</div>
+<p>Refer to <code class="docutils literal notranslate"><span class="pre">scope-train</span> <span class="pre">--help</span></code> for details.</p>
+<ul class="simple">
+<li><p>All the necessary metadata/configuration could be defined in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> under <code class="docutils literal notranslate"><span class="pre">training</span></code>,
+but could also be overridden with optional <code class="docutils literal notranslate"><span class="pre">scope-train</span></code> arguments, e.g.
+<code class="docutils literal notranslate"><span class="pre">scope-train</span> <span class="pre">...</span> <span class="pre">--batch-size</span> <span class="pre">32</span> <span class="pre">--threshold</span> <span class="pre">0.6</span> <span class="pre">...</span></code>.</p></li>
+<li><p>By default, the pipeline uses the <code class="docutils literal notranslate"><span class="pre">DNN</span></code> models defined in <code class="docutils literal notranslate"><span class="pre">scope/nn.py</span></code> using the tensorflow’s <code class="docutils literal notranslate"><span class="pre">keras</span></code> functional API. SCoPe also supports an implementation of XGBoost (set <code class="docutils literal notranslate"><span class="pre">--algorithm</span> <span class="pre">xgb</span></code>; see <code class="docutils literal notranslate"><span class="pre">scope/xgb.py</span></code>).</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">--save</span></code> is specified during <code class="docutils literal notranslate"><span class="pre">DNN</span></code> training, an HDF5 file of the model’s layers and weights will be saved. This file can be directly used for additional training and inferencing. For <code class="docutils literal notranslate"><span class="pre">XGB</span></code>, a json file will save the model along with a <code class="docutils literal notranslate"><span class="pre">.params</span></code> file with the model parameters.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> class defined in <code class="docutils literal notranslate"><span class="pre">scope.utils</span></code> hides the complexity of our dataset handling “under the rug”.</p></li>
+<li><p>You can request access to a Google Drive folder containing the latest trained models <a class="reference external" href="https://drive.google.com/drive/folders/1_oLBxveioKtw7LyMJfism745USe9tEGZ?usp=sharing">here</a>.</p></li>
+<li><p>Feature name sets are specified in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> under <code class="docutils literal notranslate"><span class="pre">features</span></code>.
+These are referenced in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> under <code class="docutils literal notranslate"><span class="pre">training.classes.&lt;class&gt;.features</span></code>.</p></li>
+<li><p>Feature stats to be used for feature scaling/standardization before training
+are either computed by the code (default) or defined in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> under <code class="docutils literal notranslate"><span class="pre">feature_stats</span></code>.</p></li>
+<li><p>We use <a class="reference external" href="https://wandb.com">Weights &amp; Biases</a> to track experiments.
+Project details and access credentials can be defined in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> under <code class="docutils literal notranslate"><span class="pre">wandb</span></code>.</p></li>
+</ul>
+<p>Initially, SCoPe used a <code class="docutils literal notranslate"><span class="pre">bash</span></code> script to train all classifier families, e.g:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>class<span class="w"> </span><span class="k">in</span><span class="w"> </span>pnp<span class="w"> </span>longt<span class="w"> </span>i<span class="w"> </span>fla<span class="w"> </span>ew<span class="w"> </span>eb<span class="w"> </span>ea<span class="w"> </span>e<span class="w"> </span>agn<span class="w"> </span>bis<span class="w"> </span>blyr<span class="w"> </span>ceph<span class="w"> </span>dscu<span class="w"> </span>lpv<span class="w"> </span>mir<span class="w"> </span>puls<span class="w"> </span>rrlyr<span class="w"> </span>rscvn<span class="w"> </span>srv<span class="w"> </span>wuma<span class="w"> </span>yso<span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$class</span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span>state<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">42</span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span>scope-train<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--tag<span class="w"> </span><span class="nv">$class</span><span class="w"> </span>--path-dataset<span class="w"> </span>data/training/dataset.d15.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--scale-features<span class="w"> </span>min_max<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--epochs<span class="w"> </span><span class="m">300</span><span class="w"> </span>--patience<span class="w"> </span><span class="m">30</span><span class="w"> </span>--random-state<span class="w"> </span><span class="nv">$state</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--verbose<span class="w"> </span><span class="m">1</span><span class="w"> </span>--gpu<span class="w"> </span><span class="m">1</span><span class="w"> </span>--conv-branch<span class="w"> </span>--save<span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="k">done</span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="k">done</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now, a training script containing one line per class to be trained can be generated by running <code class="docutils literal notranslate"><span class="pre">create-training-script</span></code>, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>create-training-script<span class="w"> </span>--filename<span class="w"> </span>train_dnn.sh<span class="w"> </span>--min-count<span class="w"> </span><span class="m">100</span><span class="w"> </span>--pre-trained-group-name<span class="w"> </span>experiment<span class="w"> </span>--add-keywords<span class="w"> </span><span class="s1">&#39;--save --batch-size 32 --group new_experiment --period-suffix ELS_ECE_EAOV&#39;</span>
+</pre></div>
+</div>
+<p>A path to the training set may be provided as input to this method or otherwise taken from <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> (<code class="docutils literal notranslate"><span class="pre">training:</span> <span class="pre">dataset:</span></code>). To continue training on existing models, specify the <code class="docutils literal notranslate"><span class="pre">--pre-trained-group-name</span></code> keyword containing the models in <code class="docutils literal notranslate"><span class="pre">create-training-script</span></code>. If training on a feature collection containing multiple sets of periodic features (from different algorithms), set the suffix corresponding to the desired algorithm using <code class="docutils literal notranslate"><span class="pre">--period-suffix</span></code> or the <code class="docutils literal notranslate"><span class="pre">features:</span> <span class="pre">info:</span> <span class="pre">period_suffix:</span></code> field in the config file. The string specified in  <code class="docutils literal notranslate"><span class="pre">--add-keywords</span></code> serves as a catch-all for additional keywords that the user wishes to be included in each line of the script.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">--pre-trained-group-name</span></code> is specified and the <code class="docutils literal notranslate"><span class="pre">--train-all</span></code> keyword is set, the output script will train all classes specified in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> regardless of whether they have a pre-trained model. If <code class="docutils literal notranslate"><span class="pre">--train-all</span></code> is not set (the default), the script will limit training to classes that have an existing trained model.</p>
+<section id="adding-new-features-for-training">
+<h3>Adding new features for training<a class="headerlink" href="#adding-new-features-for-training" title="Link to this heading">¶</a></h3>
+<p>To add a new feature, first ensure that it has been generated and saved in the training set file. Then, update the config file in the <code class="docutils literal notranslate"><span class="pre">features:</span></code> section. This section contains a list of each feature used by scope. Along with the name of the feature, be sure to specify the boolean <code class="docutils literal notranslate"><span class="pre">include</span></code> value (as <code class="docutils literal notranslate"><span class="pre">true</span></code>), the <code class="docutils literal notranslate"><span class="pre">dtype</span></code>, and whether the feature is <code class="docutils literal notranslate"><span class="pre">periodic</span></code> or not (i.e. whether the code should give append a <code class="docutils literal notranslate"><span class="pre">period_suffix</span></code> to the name.)</p>
+<p>If the new feature is ontological in nature, add the same config info to both the <code class="docutils literal notranslate"><span class="pre">phenomenological:</span></code> and <code class="docutils literal notranslate"><span class="pre">ontological:</span></code> lists. For a phenomenological feature, only add this info to the <code class="docutils literal notranslate"><span class="pre">phenomenological:</span></code> list. Note that changing the config in this way will raise an error when running scope with pre-existing trained models that lack the new feature.</p>
+</section>
+</section>
+<section id="running-inference">
+<h2>Running inference<a class="headerlink" href="#running-inference" title="Link to this heading">¶</a></h2>
+<p>Running inference requires the following steps: download ids of a field, download (or generate) features for all downloaded ids, run inference for all available trained models, e.g:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get</span><span class="o">-</span><span class="n">quad</span><span class="o">-</span><span class="n">ids</span> <span class="o">--</span><span class="n">field</span> <span class="o">&lt;</span><span class="n">field_number</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">whole</span><span class="o">-</span><span class="n">field</span>
+<span class="n">get</span><span class="o">-</span><span class="n">features</span> <span class="o">--</span><span class="n">field</span> <span class="o">&lt;</span><span class="n">field_number</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">whole</span><span class="o">-</span><span class="n">field</span> <span class="o">--</span><span class="n">impute</span><span class="o">-</span><span class="n">missing</span><span class="o">-</span><span class="n">features</span>
+</pre></div>
+</div>
+<p>OR</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">generate</span><span class="o">-</span><span class="n">features</span> <span class="o">--</span><span class="n">field</span> <span class="o">&lt;</span><span class="n">field_number</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">ccd</span> <span class="o">&lt;</span><span class="n">ccd_number</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">quad</span> <span class="o">&lt;</span><span class="n">quad_number</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">doGPU</span>
+</pre></div>
+</div>
+<p>The optimal way to run inference is through an inference script generated by running <code class="docutils literal notranslate"><span class="pre">create-inference-script</span></code> with the appropriate arguments. After creating the script and adding the needed permissions (e.g. using <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span></code>), the commands to run inference on the field <code class="docutils literal notranslate"><span class="pre">&lt;field_number&gt;</span></code> are (in order):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">get_all_preds</span><span class="o">.</span><span class="n">sh</span> <span class="o">&lt;</span><span class="n">field_number</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">models_dnn/</span></code> or <code class="docutils literal notranslate"><span class="pre">models_xgb/</span></code> folder in the root directory containing the pre-trained models for DNN and XGBoost, respectively.</p></li>
+<li><p>In a <code class="docutils literal notranslate"><span class="pre">preds_dnn</span></code> or <code class="docutils literal notranslate"><span class="pre">preds_xgb</span></code> directory, creates a single <code class="docutils literal notranslate"><span class="pre">.parquet</span></code> (and optionally <code class="docutils literal notranslate"><span class="pre">.csv</span></code>) file containing all ids of the field in the rows and inference scores for different classes across the columns.</p></li>
+<li><p>If running inference on specific ids instead of a field/ccd/quad (e.g. on GCN sources), run <code class="docutils literal notranslate"><span class="pre">./get_all_preds.sh</span> <span class="pre">specific_ids</span></code></p></li>
+</ul>
+</section>
+<section id="handling-different-file-formats">
+<h2>Handling different file formats<a class="headerlink" href="#handling-different-file-formats" title="Link to this heading">¶</a></h2>
+<p>When our manipulations of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframes is complete, we want to save them in an appropriate file format with the desired metadata. Our code works with multiple formats, each of which have advantages and drawbacks:</p>
+<ul>
+<li><p><b>Comma Separated Values (CSV, .csv):</b> in this format, data are plain text and columns are separated by commas. While this format offers a high level of human readability, it also takes more space to store and a longer time to write and read than other formats.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> offers the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function and <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code> method to perform I/O operations with this format. Metadata must be included as plain text in the file.</p>
+</li>
+<li><p><b>Hierarchical Data Format (HDF5, .h5):</b> this format stores data in binary form, so it is not human-readable. It takes up less space on disk than CSV files, and it writes/reads faster for numerical data. HDF5 does not serialize data columns containing structures like a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array, so file size improvements over CSV can be diminished if these structures exist in the data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> includes <code class="docutils literal notranslate"><span class="pre">read_hdf()</span></code> and <code class="docutils literal notranslate"><span class="pre">to_hdf()</span></code> to handle this format, and they require a package like <a class="reference external" href="https://www.pytables.org/"><code class="docutils literal notranslate"><span class="pre">PyTables</span></code></a> to work. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> does not currently support the reading and writing of metadata using the above function and method. See <code class="docutils literal notranslate"><span class="pre">scope/utils.py</span></code> for code that handles metadata in HDF5 files.</p>
+</li>
+<li><p><b>Apache Parquet (.parquet):</b> this format stores data in binary form like HDF5, so it is not human-readable. Like HDF5, Parquet also offers significant disk space savings over CSV. Unlike HDF5, Parquet supports structures like <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays in data columns.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">pandas</span></code> offers <code class="docutils literal notranslate"><span class="pre">read_parquet()</span></code> and <code class="docutils literal notranslate"><span class="pre">to_parquet()</span></code> to support this format (requiring e.g. <a class="reference external" href="https://arrow.apache.org/docs/python/"><code class="docutils literal notranslate"><span class="pre">PyArrow</span></code></a> to work), these again do not support the reading and writing of metadata associated with the dataframe.  See <code class="docutils literal notranslate"><span class="pre">scope/utils.py</span></code> for code that reads and writes metadata in Parquet files.</p>
+</li>
+</ul>
+</section>
+<section id="mapping-between-column-names-and-fritz-taxonomies">
+<h2>Mapping between column names and Fritz taxonomies<a class="headerlink" href="#mapping-between-column-names-and-fritz-taxonomies" title="Link to this heading">¶</a></h2>
+<p>The column names of training set files and Fritz taxonomy classifications are not the same by default. Training sets may also contain columns that are not meant to be uploaded to Fritz. To address both of these issues, we use a ‘taxonomy mapper’ file to connect local data and Fritz taxonomies.</p>
+<p>This file must currently be generated manually, entry by entry. Each entry’s key corresponds to a column name in the local file. The set of all keys is used to establish the columns of interest for upload or download. For example, if the training set includes columns that are not classifications, like RA and Dec, these columns should not be included among the entries in the mapper file. The code will then ignore these columns for the purpose of classification.</p>
+<p>The fields associated with each key are <code class="docutils literal notranslate"><span class="pre">fritz_label</span></code> (containing the associated Fritz classification name) and <code class="docutils literal notranslate"><span class="pre">taxonomy_id</span></code> identifying the classification’s taxonomy system. The mapper must have the following format, also demonstrated in <code class="docutils literal notranslate"><span class="pre">golden_dataset_mapper.json</span></code> and <code class="docutils literal notranslate"><span class="pre">DNN_AL_mapper.json</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;variable&quot;</span><span class="p">:</span>
+    <span class="p">{</span><span class="s2">&quot;fritz_label&quot;</span><span class="p">:</span> <span class="s2">&quot;variable&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;taxonomy_id&quot;</span><span class="p">:</span> <span class="mi">1012</span>
+    <span class="p">},</span>
+
+<span class="s2">&quot;periodic&quot;</span><span class="p">:</span>
+    <span class="p">{</span><span class="s2">&quot;fritz_label&quot;</span><span class="p">:</span> <span class="s2">&quot;periodic&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;taxonomy_id&quot;</span><span class="p">:</span> <span class="mi">1012</span>
+    <span class="p">},</span>
+
+    <span class="o">.</span>
+    <span class="o">.</span> <span class="p">[</span><span class="n">add</span> <span class="n">more</span> <span class="n">entries</span> <span class="n">here</span><span class="p">]</span>
+    <span class="o">.</span>
+
+<span class="s2">&quot;CV&quot;</span><span class="p">:</span>
+    <span class="p">{</span><span class="s2">&quot;fritz_label&quot;</span><span class="p">:</span> <span class="s2">&quot;Cataclysmic&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;taxonomy_id&quot;</span><span class="p">:</span> <span class="mi">1011</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+</div>
+</section>
+<section id="generating-features">
+<h2>Generating features<a class="headerlink" href="#generating-features" title="Link to this heading">¶</a></h2>
+<p>Code has been adapted from <a class="reference external" href="https://github.com/mcoughlin/ztfperiodic">ztfperiodic</a> and other sources to calculate basic and Fourier stats for light curves along with other features. This allows new features to be generated with SCoPe, both locally and using GPU cluster resources. The feature generation script is run using the <code class="docutils literal notranslate"><span class="pre">generate-features</span></code> command.</p>
+<p>Currently, the basic stats are calculated via <code class="docutils literal notranslate"><span class="pre">tools/featureGeneration/lcstats.py</span></code>, and a host of period-finding algorithms are available in <code class="docutils literal notranslate"><span class="pre">tools/featureGeneration/periodsearch.py</span></code>. Among the CPU-based period-finding algorithms, there is not yet support for <code class="docutils literal notranslate"><span class="pre">AOV_cython</span></code>. For the <code class="docutils literal notranslate"><span class="pre">AOV</span></code> algorithm to work, run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">build.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">tools/featureGeneration/pyaov/</span></code> directory, then copy the newly created <code class="docutils literal notranslate"><span class="pre">.so</span></code> file (<code class="docutils literal notranslate"><span class="pre">aov.cpython-310-darwin.so</span></code> or similar) to <code class="docutils literal notranslate"><span class="pre">lib/python3.10/site-packages/</span></code> or equivalent within your environment. The GPU-based algorithms require CUDA support (so Mac GPUs are not supported).</p>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–source-catalog* : name of Kowalski catalog containing ZTF sources (str)</p></li>
+<li><p>–alerts-catalog* : name of Kowalski catalog containing ZTF alerts (str)</p></li>
+<li><p>–gaia-catalog* : name of Kowalski catalog containing Gaia data (str)</p></li>
+<li><p>–bright-star-query-radius-arcsec : maximum angular distance from ZTF sources to query nearby bright stars in Gaia (float)</p></li>
+<li><p>–xmatch-radius-arcsec : maximum angular distance from ZTF sources to match external catalog sources (float)</p></li>
+<li><p>–limit : maximum number of sources to process in batch queries / statistics calculations (int)</p></li>
+<li><p>–period-algorithms* : dictionary containing names of period algorithms to run. Normally specified in config - if specified here, should be a (list)</p></li>
+<li><p>–period-batch-size : maximum number of sources to simultaneously perform period finding (int)</p></li>
+<li><p>–doCPU : flag to run config-specified CPU period algorithms (bool)</p></li>
+<li><p>–doGPU : flag to run config-specified GPU period algorithms (bool)</p></li>
+<li><p>–samples-per-peak : number of samples per periodogram peak (int)</p></li>
+<li><p>–doScaleMinPeriod : for period finding, scale min period based on min-cadence-minutes (bool). Otherwise, set –max-freq to desired value</p></li>
+<li><p>–doRemoveTerrestrial : remove terrestrial frequencies from period-finding analysis (bool)</p></li>
+<li><p>–Ncore : number of CPU cores to parallelize queries (int)</p></li>
+<li><p>–field : ZTF field to run (int)</p></li>
+<li><p>–ccd : ZTF ccd to run (int)</p></li>
+<li><p>–quad : ZTF quadrant to run (int)</p></li>
+<li><p>–min-n-lc-points : minimum number of points required to generate features for a light curve (int)</p></li>
+<li><p>–min-cadence-minutes : minimum cadence between light curve points. Higher-cadence data are dropped except for the first point in the sequence (float)</p></li>
+<li><p>–dirname : name of generated feature directory (str)</p></li>
+<li><p>–filename : prefix of each feature filename (str)</p></li>
+<li><p>–doCesium : flag to compute config-specified cesium features in addition to default list (bool)</p></li>
+<li><p>–doNotSave : flag to avoid saving generated features (bool)</p></li>
+<li><p>–stop-early : flag to stop feature generation before entire quadrant is run. Pair with –limit to run small-scale tests (bool)</p></li>
+<li><p>–doQuadrantFile : flag to use a generated file containing [jobID, field, ccd, quad] columns instead of specifying –field, –ccd and –quad (bool)</p></li>
+<li><p>–quadrant-file : name of quadrant file in the generated_features/slurm directory or equivalent (str)</p></li>
+<li><p>–quadrant-index : number of job in quadrant file to run (int)</p></li>
+<li><p>–doSpecificIDs: flag to perform feature generation for ztf_id column in config-specified file (bool)</p></li>
+<li><p>–skipCloseSources: flag to skip removal of sources too close to bright stars via Gaia (bool)</p></li>
+<li><p>–top-n-periods: number of (E)LS, (E)CE periods to pass to (E)AOV if using (E)LS_(E)CE_(E)AOV algorithm (int)</p></li>
+<li><p>–max-freq: maximum frequency [1 / days] to use for period finding (float). Overridden by –doScaleMinPeriod</p></li>
+<li><p>–fg-dataset*: path to parquet, hdf5 or csv file containing specific sources for feature generation (str)</p></li>
+<li><p>–max-timestamp-hjd*: maximum timestamp of queried light curves, HJD (float)</p></li>
+</ol>
+<p>output:
+feature_df : dataframe containing generated features</p>
+<p>* - specified in config.yaml</p>
+<section id="example-usage">
+<h3>Example usage<a class="headerlink" href="#example-usage" title="Link to this heading">¶</a></h3>
+<p>The following is an example of running the feature generation script locally:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">generate</span><span class="o">-</span><span class="n">features</span> <span class="o">--</span><span class="n">field</span> <span class="mi">301</span> <span class="o">--</span><span class="n">ccd</span> <span class="mi">2</span> <span class="o">--</span><span class="n">quad</span> <span class="mi">4</span> <span class="o">--</span><span class="n">source</span><span class="o">-</span><span class="n">catalog</span> <span class="n">ZTF_sources_20230109</span> <span class="o">--</span><span class="n">alerts</span><span class="o">-</span><span class="n">catalog</span> <span class="n">ZTF_alerts</span> <span class="o">--</span><span class="n">gaia</span><span class="o">-</span><span class="n">catalog</span> <span class="n">Gaia_EDR3</span> <span class="o">--</span><span class="n">bright</span><span class="o">-</span><span class="n">star</span><span class="o">-</span><span class="n">query</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">arcsec</span> <span class="mf">300.0</span> <span class="o">--</span><span class="n">xmatch</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">arcsec</span> <span class="mf">2.0</span> <span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">size</span><span class="o">-</span><span class="n">limit</span> <span class="mi">10000</span> <span class="o">--</span><span class="n">period</span><span class="o">-</span><span class="n">batch</span><span class="o">-</span><span class="n">size</span> <span class="mi">1000</span> <span class="o">--</span><span class="n">samples</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">peak</span> <span class="mi">10</span> <span class="o">--</span><span class="n">Ncore</span> <span class="mi">4</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">lc</span><span class="o">-</span><span class="n">points</span> <span class="mi">50</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">cadence</span><span class="o">-</span><span class="n">minutes</span> <span class="mf">30.0</span> <span class="o">--</span><span class="n">dirname</span> <span class="n">generated_features</span> <span class="o">--</span><span class="n">filename</span> <span class="n">gen_features</span> <span class="o">--</span><span class="n">doCPU</span> <span class="o">--</span><span class="n">doRemoveTerrestrial</span> <span class="o">--</span><span class="n">doCesium</span>
+</pre></div>
+</div>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">--doCPU</span></code> will run the config-specified CPU period algorithms on each source. Setting <code class="docutils literal notranslate"><span class="pre">--doGPU</span></code> instead will do likewise with the specified GPU algorithms. If neither of these keywords is set, the code will assign a value of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> to each period and compute Fourier statistics using that number.</p>
+<p>Below is an example run the script using a job/quadrant file (containing [job id, field, ccd, quad] columns) instead of specifying field/ccd/quad directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">generate</span><span class="o">-</span><span class="n">features</span> <span class="o">--</span><span class="n">source</span><span class="o">-</span><span class="n">catalog</span> <span class="n">ZTF_sources_20230109</span> <span class="o">--</span><span class="n">alerts</span><span class="o">-</span><span class="n">catalog</span> <span class="n">ZTF_alerts</span> <span class="o">--</span><span class="n">gaia</span><span class="o">-</span><span class="n">catalog</span> <span class="n">Gaia_EDR3</span> <span class="o">--</span><span class="n">bright</span><span class="o">-</span><span class="n">star</span><span class="o">-</span><span class="n">query</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">arcsec</span> <span class="mf">300.0</span> <span class="o">--</span><span class="n">xmatch</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">arcsec</span> <span class="mf">2.0</span> <span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">size</span><span class="o">-</span><span class="n">limit</span> <span class="mi">10000</span> <span class="o">--</span><span class="n">period</span><span class="o">-</span><span class="n">batch</span><span class="o">-</span><span class="n">size</span> <span class="mi">1000</span> <span class="o">--</span><span class="n">samples</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">peak</span> <span class="mi">10</span> <span class="o">--</span><span class="n">Ncore</span> <span class="mi">20</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">lc</span><span class="o">-</span><span class="n">points</span> <span class="mi">50</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">cadence</span><span class="o">-</span><span class="n">minutes</span> <span class="mf">30.0</span> <span class="o">--</span><span class="n">dirname</span> <span class="n">generated_features_DR15</span> <span class="o">--</span><span class="n">filename</span> <span class="n">gen_features</span> <span class="o">--</span><span class="n">doGPU</span> <span class="o">--</span><span class="n">doRemoveTerrestrial</span> <span class="o">--</span><span class="n">doCesium</span> <span class="o">--</span><span class="n">doQuadrantFile</span> <span class="o">--</span><span class="n">quadrant</span><span class="o">-</span><span class="n">file</span> <span class="n">slurm</span><span class="o">.</span><span class="n">dat</span> <span class="o">--</span><span class="n">quadrant</span><span class="o">-</span><span class="n">index</span> <span class="mi">5738</span>
+</pre></div>
+</div>
+</section>
+<section id="slurm-scripts">
+<h3>Slurm scripts<a class="headerlink" href="#slurm-scripts" title="Link to this heading">¶</a></h3>
+<p>For large-scale feature generation, <code class="docutils literal notranslate"><span class="pre">generate-features</span></code> is intended to be run on a high-performance computing cluster. Often these clusters require jobs to be submitted using a utility like <code class="docutils literal notranslate"><span class="pre">slurm</span></code> (Simple Linux Utility for Resource Management) to generate scripts. These scripts contain information about the type, amount and duration of computing resources to allocate to the user.</p>
+<p>Scope’s <code class="docutils literal notranslate"><span class="pre">generate-features-slurm</span></code> code creates two slurm scripts: (1) runs single instance of <code class="docutils literal notranslate"><span class="pre">generate-features</span></code>, and (2) runs the <code class="docutils literal notranslate"><span class="pre">generate-features-job-submission</span></code> which submits multiple jobs in parallel, periodically checking to see if additional jobs can be started. See below for more information about these components of feature generation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate-features-slurm</span></code> can receive all of the arguments used by <code class="docutils literal notranslate"><span class="pre">generate-features</span></code>. These arguments are passed to the instances of feature generation begun by running slurm script (1). There are also additional arguments specific to cluster resource management:</p>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–job-name : name of submitted jobs (str)</p></li>
+<li><p>–cluster-name : name of HPC cluster (str)</p></li>
+<li><p>–partition-type : cluster partition to use (str)</p></li>
+<li><p>–nodes : number of nodes to request (int)</p></li>
+<li><p>–gpus : number of GPUs to request (int)</p></li>
+<li><p>–memory-GB : amount of memory to request in GB (int)</p></li>
+<li><p>–submit-memory-GB : Memory allocation to request for job submission (int)</p></li>
+<li><p>–time : amount of time before instance times out (str)</p></li>
+<li><p>–mail-user: user’s email address for job updates (str)</p></li>
+<li><p>–account-name : name of account having HPC allocation (str)</p></li>
+<li><p>–python-env-name : name of Python environment to activate before running <code class="docutils literal notranslate"><span class="pre">generate_features.py</span></code> (str)</p></li>
+<li><p>–generateQuadrantFile : flag to map fields/ccds/quads containing sources to job numbers, save file (bool)</p></li>
+<li><p>–field-list : space-separated list of fields for which to generate quadrant file. If None, all populated fields included (int)</p></li>
+<li><p>–max-instances : maximum number of HPC instances to run in parallel (int)</p></li>
+<li><p>–wait-time-minutes : amount of time to wait between status checks in minutes (float)</p></li>
+<li><p>–doSubmitLoop : flag to run loop initiating instances until out of jobs (hard on Kowalski)</p></li>
+<li><p>–runParallel : flag to run jobs in parallel using slurm [recommended]. Otherwise, run in series on a single instance</p></li>
+<li><p>–user : if using slurm, your username. This will be used to periodically run <code class="docutils literal notranslate"><span class="pre">squeue</span></code> and list your running jobs (str)</p></li>
+<li><p>–submit-interval-minutes : Time to wait between job submissions, minutes (float)</p></li>
+</ol>
+</section>
+</section>
+<section id="feature-definitions">
+<h2>Feature definitions<a class="headerlink" href="#feature-definitions" title="Link to this heading">¶</a></h2>
+<section id="selected-phenomenological-feature-definitions">
+<h3>Selected phenomenological feature definitions<a class="headerlink" href="#selected-phenomenological-feature-definitions" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ad</p></td>
+<td><p>Anderson-Darling statistic</p></td>
+</tr>
+<tr class="row-odd"><td><p>chi2red</p></td>
+<td><p>Reduced chi^2 after mean subtraction</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_BIC</p></td>
+<td><p>Bayesian information criterion of best-fitting series (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_a</p></td>
+<td><p>a coefficient of best-fitting series (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_amp</p></td>
+<td><p>Amplitude of best-fitting series (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_b</p></td>
+<td><p>b coefficient of best-fitting series (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_phi0</p></td>
+<td><p>Zero-phase of best-fitting series (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_power</p></td>
+<td><p>Normalized chi^2 of best-fitting series (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_relamp1</p></td>
+<td><p>Relative amplitude, first harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_relamp2</p></td>
+<td><p>Relative amplitude, second harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_relamp3</p></td>
+<td><p>Relative amplitude, third harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_relamp4</p></td>
+<td><p>Relative amplitude, fourth harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_relphi1</p></td>
+<td><p>Relative phase, first harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_relphi2</p></td>
+<td><p>Relative phase, second harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>f1_relphi3</p></td>
+<td><p>Relative phase, third harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>f1_relphi4</p></td>
+<td><p>Relative phase, fourth harmonic (Fourier analysis)</p></td>
+</tr>
+<tr class="row-even"><td><p>i60r</p></td>
+<td><p>Mag ratio between 20th, 80th percentiles</p></td>
+</tr>
+<tr class="row-odd"><td><p>i70r</p></td>
+<td><p>Mag ratio between 15th, 85th percentiles</p></td>
+</tr>
+<tr class="row-even"><td><p>i80r</p></td>
+<td><p>Mag ratio between 10th, 90th percentiles</p></td>
+</tr>
+<tr class="row-odd"><td><p>i90r</p></td>
+<td><p>Mag ratio between 5th, 95th percentiles</p></td>
+</tr>
+<tr class="row-even"><td><p>inv_vonneumannratio</p></td>
+<td><p>Inverse of Von Neumann ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>iqr</p></td>
+<td><p>Mag ratio between 25th, 75th percentiles</p></td>
+</tr>
+<tr class="row-even"><td><p>median</p></td>
+<td><p>Median magnitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>median_abs_dev</p></td>
+<td><p>Median absolute deviation of magnitudes</p></td>
+</tr>
+<tr class="row-even"><td><p>norm_excess_var</p></td>
+<td><p>Normalized excess variance</p></td>
+</tr>
+<tr class="row-odd"><td><p>norm_peak_to_peak_amp</p></td>
+<td><p>Normalized peak-to-peak amplitude</p></td>
+</tr>
+<tr class="row-even"><td><p>roms</p></td>
+<td><p>Root of mean magnitudes squared</p></td>
+</tr>
+<tr class="row-odd"><td><p>skew</p></td>
+<td><p>Skew of magnitudes</p></td>
+</tr>
+<tr class="row-even"><td><p>smallkurt</p></td>
+<td><p>Kurtosis of magnitudes</p></td>
+</tr>
+<tr class="row-odd"><td><p>stetson_j</p></td>
+<td><p>Stetson J coefficient</p></td>
+</tr>
+<tr class="row-even"><td><p>stetson_k</p></td>
+<td><p>Stetson K coefficient</p></td>
+</tr>
+<tr class="row-odd"><td><p>sw</p></td>
+<td><p>Shapiro-Wilk statistic</p></td>
+</tr>
+<tr class="row-even"><td><p>welch_i</p></td>
+<td><p>Welch I statistic</p></td>
+</tr>
+<tr class="row-odd"><td><p>wmean</p></td>
+<td><p>Weighted mean of magtnidues</p></td>
+</tr>
+<tr class="row-even"><td><p>wstd</p></td>
+<td><p>Weighted standard deviation of magnitudes</p></td>
+</tr>
+<tr class="row-odd"><td><p>dmdt</p></td>
+<td><p>Magnitude-time histograms (26x26)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="selected-ontological-feature-definitions">
+<h3>Selected ontological feature definitions<a class="headerlink" href="#selected-ontological-feature-definitions" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mean_ztf_alert_braai</p></td>
+<td><p>Mean significance of ZTF alerts for this source</p></td>
+</tr>
+<tr class="row-odd"><td><p>n_ztf_alerts</p></td>
+<td><p>Number of ZTF alerts for this source</p></td>
+</tr>
+<tr class="row-even"><td><p>period</p></td>
+<td><p>Period determined by subscripted algorithms (e.g. ELS_ECE_EAOV)</p></td>
+</tr>
+<tr class="row-odd"><td><p>significance</p></td>
+<td><p>Significance of period</p></td>
+</tr>
+<tr class="row-even"><td><p>AllWISE_w1mpro</p></td>
+<td><p>AllWISE W1 mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>AllWISE_w1sigmpro</p></td>
+<td><p>AllWISE W1 mag error</p></td>
+</tr>
+<tr class="row-even"><td><p>AllWISE_w2mpro</p></td>
+<td><p>AllWISE W2 mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>AllWISE_w2sigmpro</p></td>
+<td><p>AllWISE W2 mag error</p></td>
+</tr>
+<tr class="row-even"><td><p>AllWISE_w3mpro</p></td>
+<td><p>AllWISE W3 mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>AllWISE_w4mpro</p></td>
+<td><p>AllWISE W4 mag</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaia_EDR3__parallax</p></td>
+<td><p>Gaia parallax</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaia_EDR3__parallax_error</p></td>
+<td><p>Gaia parallax error</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaia_EDR3__phot_bp_mean_mag</p></td>
+<td><p>Gaia BP mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaia_EDR3__phot_bp_rp_excess_factor</p></td>
+<td><p>Gaia BP-RP excess factor</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaia_EDR3__phot_g_mean_mag</p></td>
+<td><p>Gaia G mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaia_EDR3__phot_rp_mean_mag</p></td>
+<td><p>Gaia RP mag</p></td>
+</tr>
+<tr class="row-even"><td><p>PS1_DR1__gMeanPSFMag</p></td>
+<td><p>PS1 g mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>PS1_DR1__gMeanPSFMagErr</p></td>
+<td><p>PS1 g mag error</p></td>
+</tr>
+<tr class="row-even"><td><p>PS1_DR1__rMeanPSFMag</p></td>
+<td><p>PS1 r mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>PS1_DR1__rMeanPSFMagErr</p></td>
+<td><p>PS1 r mag error</p></td>
+</tr>
+<tr class="row-even"><td><p>PS1_DR1__iMeanPSFMag</p></td>
+<td><p>PS1 i mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>PS1_DR1__iMeanPSFMagErr</p></td>
+<td><p>PS1 i mag error</p></td>
+</tr>
+<tr class="row-even"><td><p>PS1_DR1__zMeanPSFMag</p></td>
+<td><p>PS1 z mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>PS1_DR1__zMeanPSFMagErr</p></td>
+<td><p>PS1 z mag error</p></td>
+</tr>
+<tr class="row-even"><td><p>PS1_DR1__yMeanPSFMag</p></td>
+<td><p>PS1 y mag</p></td>
+</tr>
+<tr class="row-odd"><td><p>PS1_DR1__yMeanPSFMagErr</p></td>
+<td><p>PS1 y mag error</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="running-automated-analyses">
+<h2>Running automated analyses<a class="headerlink" href="#running-automated-analyses" title="Link to this heading">¶</a></h2>
+<p>The primary deliverable of SCoPe is a catalog of variable source classifications across all of ZTF. Since ZTF contains billions of light curves, this catalog requires significant compute resources to assemble. We may still want to study ZTF’s expansive collection of data with SCoPe before the classification catalog is complete. For example, SCoPe classifiers can be applied to the realm of transient follow-up.</p>
+<p>It is useful to know the classifications of any persistent ZTF sources that are close to transient candidates on the sky. Once SCoPe’s primary deliverable is complete, obtaining these classifications will involve a straightforward database query. Presently, however, we must run the SCoPe workflow on a custom list of sources repeatedly to account for the rapidly changing landscape of transient events. See “Guide for Fritz Scanners” for a more detailed explanation of the workflow itself. This section continues with a discussion of how the automated analysis in <code class="docutils literal notranslate"><span class="pre">gcn_cronjob.py</span></code> is implemented using <code class="docutils literal notranslate"><span class="pre">cron</span></code>.</p>
+<section id="cron-job-basics">
+<h3><code class="docutils literal notranslate"><span class="pre">cron</span></code> job basics<a class="headerlink" href="#cron-job-basics" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cron</span></code> runs scripts at specific time intervals in a simple environment. While this simplicity fosters compatibility between different operating systems, the trade-off is that some extra steps are required to run scripts compared to more familiar coding environments (e.g. within <code class="docutils literal notranslate"><span class="pre">scope-env</span></code> for this project).</p>
+<p>To set up a <code class="docutils literal notranslate"><span class="pre">cron</span></code> job, first run <code class="docutils literal notranslate"><span class="pre">EDITOR=emacs</span> <span class="pre">crontab</span> <span class="pre">-e</span></code>. You can replace <code class="docutils literal notranslate"><span class="pre">emacs</span></code> with your text editor of choice as long as it is installed on your machine. This command will open a text file in which to place <code class="docutils literal notranslate"><span class="pre">cron</span></code> commands. An example command is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="w"> </span>*/2<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>scope<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>~/miniforge3/envs/scope-env/bin/python<span class="w"> </span>~/scope/gcn_cronjob.py<span class="w"> </span>&gt;<span class="w"> </span>~/scope/log_gcn_cronjob.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Above, the <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">*/2</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span></code> means that this command will run every two hours, on minute 0 of that hour. Time increments increase from left to right; in this example, the five numbers are minute, hour, day (of month), month, day (of week). The <code class="docutils literal notranslate"><span class="pre">*/2</span></code> means that the hour has to be divisible by 2 for the job to run. Check out <a class="reference external" href="https://crontab.guru">crontab.guru</a> to learn more about <code class="docutils literal notranslate"><span class="pre">cron</span></code> timing syntax.</p>
+<p>Next in the line, we change directories to <code class="docutils literal notranslate"><span class="pre">scope</span></code> in order for the code to access our <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file located in this directory. Then, <code class="docutils literal notranslate"><span class="pre">~/miniforge3/envs/scope-env/bin/python</span> <span class="pre">~/scope/gcn_cronjob.py</span></code> is the command that gets run (using the Python environment installed in <code class="docutils literal notranslate"><span class="pre">scope-env</span></code>). The <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> character forwards the output from the command (e.g. what your script prints) into a log file in a specific location (here <code class="docutils literal notranslate"><span class="pre">~/scope/log_gcn_cronjob.txt</span></code>). Finally, the <code class="docutils literal notranslate"><span class="pre">2&gt;&amp;1</span></code> suppresses ‘emails’ from <code class="docutils literal notranslate"><span class="pre">cron</span></code> about the status of your job (unnecessary since the log is being saved to the user-specified file).</p>
+<p>Save the text file once you finish modifying it to install the cron job. <strong>Ensure that the last line of your file is a newline to avoid issues when running.</strong> Your computer may pop up a window to which you should respond in the affirmative in order to successfully initialize the job. To check which <code class="docutils literal notranslate"><span class="pre">cron</span></code> jobs have been installed, run <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-l</span></code>. To uninstall your jobs, run <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-r</span></code>.</p>
+</section>
+<section id="additional-details-for-cron-environment">
+<h3>Additional details for <code class="docutils literal notranslate"><span class="pre">cron</span></code> environment<a class="headerlink" href="#additional-details-for-cron-environment" title="Link to this heading">¶</a></h3>
+<p>Because <code class="docutils literal notranslate"><span class="pre">cron</span></code> runs in a simple environment, the usual details of environment setup and paths cannot be overlooked. In order for the above job to work, we need to add more information when we run <code class="docutils literal notranslate"><span class="pre">EDITOR=emacs</span> <span class="pre">crontab</span> <span class="pre">-e</span></code>. The lines below will produce a successful run (if SCoPe is installed in your home directory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYTHONPATH</span> <span class="o">=</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">scope</span>
+
+<span class="mi">0</span> <span class="o">*/</span><span class="mi">2</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">homebrew</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">gtimeout</span> <span class="mi">2</span><span class="n">h</span> <span class="o">~/</span><span class="n">miniforge3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">scope</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">~/</span><span class="n">scope</span><span class="o">/</span><span class="n">gcn_cronjob</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;</span> <span class="o">~/</span><span class="n">scope</span><span class="o">/</span><span class="n">log_gcn_cronjob</span><span class="o">.</span><span class="n">txt</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+
+</pre></div>
+</div>
+<p>In the first line above, the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable is defined to include the <code class="docutils literal notranslate"><span class="pre">scope</span></code> directory. Without this line, any code that imports from <code class="docutils literal notranslate"><span class="pre">scope</span></code> will throw an error, since the user’s usual <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> variable is not accessed in the <code class="docutils literal notranslate"><span class="pre">cron</span></code> environment.</p>
+<p>The second line begins with the familiar <code class="docutils literal notranslate"><span class="pre">cron</span></code> timing pattern described above. It continues by specifying the a maximum runtime of 2 hours before timing out using the <code class="docutils literal notranslate"><span class="pre">gtimeout</span></code> command. On a Mac, this can be installed with <code class="docutils literal notranslate"><span class="pre">homebrew</span></code> by running <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">coreutils</span></code>. Note that the full path to <code class="docutils literal notranslate"><span class="pre">gtimeout</span></code> must be specified. After the timeout comes the call to the <code class="docutils literal notranslate"><span class="pre">gcn_cronjob.py</span></code> script. Note that the usual <code class="docutils literal notranslate"><span class="pre">#/usr/bin/env</span> <span class="pre">python</span></code> line at the top of SCoPe’s python scripts does not work within the <code class="docutils literal notranslate"><span class="pre">cron</span></code> environment. Instead, <code class="docutils literal notranslate"><span class="pre">python</span></code> must be explicitly specified, and in order to have access to the modules and scripts installed in <code class="docutils literal notranslate"><span class="pre">scope-env</span></code> we must provide a full path like the one above (<code class="docutils literal notranslate"><span class="pre">~/miniforge3/envs/scope-env/bin/python</span></code>). The line concludes by sending the script’s output to a dedicated log file. This file gets overwritten each time the script runs.</p>
+</section>
+<section id="check-if-cron-job-is-running">
+<h3>Check if <code class="docutils literal notranslate"><span class="pre">cron</span></code> job is running<a class="headerlink" href="#check-if-cron-job-is-running" title="Link to this heading">¶</a></h3>
+<p>It can be useful to know whether the script within a cron job is currently running. One way to do this for <code class="docutils literal notranslate"><span class="pre">gcn_cronjob.py</span></code> is to run the command <code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">aux</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">gcn_cronjob.py</span></code>. This will always return one item (representing the command you just ran), but if the script is currently running you will see more than one item.</p>
+</section>
+</section>
+<section id="local-feature-generation-inference">
+<h2>Local feature generation/inference<a class="headerlink" href="#local-feature-generation-inference" title="Link to this heading">¶</a></h2>
+<p>SCoPe contains a script that runs local feature generation and inference on sources specified in an input file. Example input files are contained within the <code class="docutils literal notranslate"><span class="pre">tools</span></code> directory (<code class="docutils literal notranslate"><span class="pre">local_scope_radec.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">local_scope_ztfid.csv</span></code>). After receiving either ra/dec coordinates or ZTF light curve IDs (plus an object ID for each entry), the <code class="docutils literal notranslate"><span class="pre">run-scope-local</span></code> script will generate features and run inference using existing trained models, saving the results to timestamped directories. This script accepts most arguments from <code class="docutils literal notranslate"><span class="pre">generate-features</span></code> and <code class="docutils literal notranslate"><span class="pre">scope-inference</span></code>. Additional inputs specific to this script are listed below.</p>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–path-dataset : path (from base scope directory or fully qualified) to parquet, hdf5 or csv file containing specific sources (str)</p></li>
+<li><p>–cone-radius-arcsec : radius of cone search query for ZTF lightcurve IDs, if inputting ra/dec (float)</p></li>
+<li><p>–save-sources-filepath : path to parquet, hdf5 or csv file to save specific sources (str)</p></li>
+<li><p>–algorithms : ML algorithms to run (currently dnn/xgb)</p></li>
+<li><p>–group-names : group names of trained models (with order corresponding to –algorithms input)</p></li>
+</ol>
+<p>output:
+current_dt : formatted datetime string used to label output directories</p>
+<section id="id1">
+<h3>Example usage<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="o">-</span><span class="n">scope</span><span class="o">-</span><span class="n">local</span> <span class="o">--</span><span class="n">path</span><span class="o">-</span><span class="n">dataset</span> <span class="n">tools</span><span class="o">/</span><span class="n">local_scope_ztfid</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">doCPU</span> <span class="o">--</span><span class="n">doRemoveTerrestrial</span> <span class="o">--</span><span class="n">scale_features</span> <span class="n">min_max</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">names</span> <span class="n">DR16_stats</span> <span class="n">nobalance_DR16_DNN_stats</span> <span class="o">--</span><span class="n">algorithms</span> <span class="n">xgb</span>
+
+<span class="n">run</span><span class="o">-</span><span class="n">scope</span><span class="o">-</span><span class="n">local</span> <span class="o">--</span><span class="n">path</span><span class="o">-</span><span class="n">dataset</span> <span class="n">tools</span><span class="o">/</span><span class="n">local_scope_radec</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">doCPU</span> <span class="o">--</span><span class="n">write_csv</span> <span class="o">--</span><span class="n">doRemoveTerrestrial</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">names</span> <span class="n">DR16_stats</span> <span class="n">nobalance_DR16_DNN_stats</span> <span class="o">--</span><span class="n">algorithms</span> <span class="n">xgb</span> <span class="n">dnn</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="scope-download-classification">
+<h2>scope-download-classification<a class="headerlink" href="#scope-download-classification" title="Link to this heading">¶</a></h2>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–file : CSV file containing obj_id and/or ra dec coordinates. Set to “parse” to download sources by group id.</p></li>
+<li><p>–group-ids : target group id(s) on Fritz for download, space-separated (if CSV file not provided)</p></li>
+<li><p>–start : Index or page number (if in “parse” mode) to begin downloading (optional)</p></li>
+<li><p>–merge-features : Flag to merge features from Kowalski with downloaded sources</p></li>
+<li><p>–features-catalog : Name of features catalog to query</p></li>
+<li><p>–features-limit : Limit on number of sources to query at once</p></li>
+<li><p>–taxonomy-map : Filename of taxonomy mapper (JSON format)</p></li>
+<li><p>–output-dir : Name of directory to save downloaded files</p></li>
+<li><p>–output-filename : Name of file containing merged classifications and features</p></li>
+<li><p>–output-format : Output format of saved files, if not specified in (9). Must be one of parquet, h5, or csv.</p></li>
+<li><p>–get-ztf-filters : Flag to add ZTF filter IDs (separate catalog query) to default features</p></li>
+<li><p>–impute-missing-features : Flag to impute missing features using scope.utils.impute_features</p></li>
+<li><p>–update-training-set : if downloading an active learning sample, update the training set with the new classification based on votes</p></li>
+<li><p>–updated-training-set-prefix : Prefix to add to updated training set file</p></li>
+<li><p>–min-vote-diff : Minimum number of net votes (upvotes - downvotes) to keep an active learning classification. Caution: if zero, all classifications of reviewed sources will be added</p></li>
+</ol>
+<p>process:</p>
+<ol class="arabic simple">
+<li><p>if CSV file provided, query by object ids or ra, dec</p></li>
+<li><p>if CSV file not provided, bulk query based on group id(s)</p></li>
+<li><p>get the classification/probabilities/periods of the objects in the dataset from Fritz</p></li>
+<li><p>append these values as new columns on the dataset, save to new file</p></li>
+<li><p>if merge_features, query Kowalski and merge sources with features, saving new CSV file</p></li>
+<li><p>Fritz sources with multiple associated ZTF IDs will generate multiple rows in the merged feature file</p></li>
+<li><p>To skip the source download part of the code, provide an input CSV file containing columns named ‘obj_id’, ‘classification’, ‘probability’, ‘period_origin’, ‘period’, ‘ztf_id_origin’, and ‘ztf_id’.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">--update-training-set</span></code> to read the config-specified training set and merge new sources/classifications from an active learning group</p></li>
+</ol>
+<p>output: data with new columns appended.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>scope-download-classification<span class="w"> </span>--file<span class="w"> </span>sample.csv<span class="w"> </span>--group-ids<span class="w"> </span><span class="m">360</span><span class="w"> </span><span class="m">361</span><span class="w"> </span>--start<span class="w"> </span><span class="m">10</span><span class="w"> </span>--merge-features<span class="w"> </span>True<span class="w"> </span>--features-catalog<span class="w"> </span>ZTF_source_features_DR16<span class="w"> </span>--features-limit<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--taxonomy-map<span class="w"> </span>golden_dataset_mapper.json<span class="w"> </span>--output-dir<span class="w"> </span>fritzDownload<span class="w"> </span>--output-filename<span class="w"> </span>merged_classifications_features<span class="w"> </span>--output-format<span class="w"> </span>parquet<span class="w"> </span>-get-ztf-filters<span class="w"> </span>--impute-missing-features
+</pre></div>
+</div>
+</section>
+<section id="scope-download-gcn-sources">
+<h2>scope-download-gcn-sources<a class="headerlink" href="#scope-download-gcn-sources" title="Link to this heading">¶</a></h2>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–dateobs: unique dateObs of GCN event (str)</p></li>
+<li><p>–group-ids: group ids to query sources, space-separated [all if not specified] (list)</p></li>
+<li><p>–days-range: max days past event to search for sources (float)</p></li>
+<li><p>–radius-arcsec: radius [arcsec] around new sources to search for existing ZTF sources (float)</p></li>
+<li><p>–save-filename: filename to save source ids/coordinates (str)</p></li>
+</ol>
+<p>process:</p>
+<ol class="arabic simple">
+<li><p>query all sources associated with GCN event</p></li>
+<li><p>get fritz names, ras and decs for each page of sources</p></li>
+<li><p>save json file in a useful format to use with <code class="docutils literal notranslate"><span class="pre">generate-features</span>&#160; <span class="pre">--doSpecificIDs</span></code></p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>scope-download-gcn-sources<span class="w"> </span>--dateobs<span class="w"> </span><span class="m">2023</span>-05-21T05:30:43
+</pre></div>
+</div>
+</section>
+<section id="scope-upload-classification">
+<h2>scope-upload-classification<a class="headerlink" href="#scope-upload-classification" title="Link to this heading">¶</a></h2>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–file : path to CSV, HDF5 or Parquet file containing ra, dec, period, and labels</p></li>
+<li><p>–group-ids : target group id(s) on Fritz for upload, space-separated</p></li>
+<li><p>–classification : Name(s) of input file columns containing classification probabilities (one column per label). Set this to “read” to automatically upload all classes specified in the taxonomy mapper at once.</p></li>
+<li><p>–taxonomy-map : Filename of taxonomy mapper (JSON format)</p></li>
+<li><p>–comment : Comment to post (if specified)</p></li>
+<li><p>–start : Index to start uploading (zero-based)</p></li>
+<li><p>–stop : Index to stop uploading (inclusive)</p></li>
+<li><p>–classification-origin: origin of classifications. If ‘SCoPe’ (default), Fritz will apply custom color-coding</p></li>
+<li><p>–skip-phot : flag to skip photometry upload (skips for existing sources only)</p></li>
+<li><p>–post-survey-id : flag to post an annotation for the Gaia, AllWISE or PS1 id associated with each source</p></li>
+<li><p>–survey-id-origin : Annotation origin name for survey_id</p></li>
+<li><p>–p-threshold : Probability threshold for posted classification (values must be &gt;= than this number to post)</p></li>
+<li><p>–match-ids : flag to match input and existing survey_id values during upload. It is recommended to instead match obj_ids (see next line)</p></li>
+<li><p>–use-existing-obj-id : flag to use existing source names in a column named ‘obj_id’ (a coordinate-based ID is otherwise generated by default)</p></li>
+<li><p>–post-upvote : flag to post an upvote to newly uploaded classifications. Not recommended when posting automated classifications for active learning.</p></li>
+<li><p>–check-labelled-box : flag to check the ‘labelled’ box for each source when uploading classifications. Not recommended when posting automated classifications for active learning.</p></li>
+<li><p>–write-obj-id : flag to output a copy of the input file with an ‘obj_id’ column containing the coordinate-based IDs for each posted object. Use this file as input for future uploads to add to this column.</p></li>
+<li><p>–result-dir : name of directory where upload results file is saved. Default is ‘fritzUpload’ within the tools directory.</p></li>
+<li><p>–result-filetag: name of tag appended to the result filename. Default is ‘fritzUpload’.</p></li>
+<li><p>–result-format : result file format; one of csv, h5 or parquet. Default is parquet.</p></li>
+<li><p>–replace-classifications : flag to delete each source’s existing classifications before posting new ones.</p></li>
+<li><p>–radius-arcsec: photometry search radius for uploaded sources.</p></li>
+<li><p>–no-ml: flag to post classifications that do not originate from an ML classifier.</p></li>
+<li><p>–post-phot-as-comment: flag to post photometry as a comment on the source (bool)</p></li>
+<li><p>–post-phasefolded-phot: flag to post phase-folded photometry as comment in addition to time series (bool)</p></li>
+<li><p>–phot-dirname: name of directory in which to save photometry plots (str)</p></li>
+<li><p>–instrument-name: name of instrument used for observations (str)</p></li>
+</ol>
+<p>process:
+0. include Kowalski host, port, protocol, and token or username+password in config.yaml</p>
+<ol class="arabic simple">
+<li><p>check if each input source exists by comparing input and existing obj_ids and/or survey_ids</p></li>
+<li><p>save the objects to Fritz group if new</p></li>
+<li><p>in batches, upload the classifications of the objects in the dataset to target group on Fritz</p></li>
+<li><p>duplicate classifications will not be uploaded to Fritz. If n classifications are manually specified, probabilities will be sourced from the last n columns of the dataset.</p></li>
+<li><p>post survey_id annotations</p></li>
+<li><p>(post comment to each uploaded source)</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>scope-upload-classification<span class="w"> </span>--file<span class="w"> </span>sample.csv<span class="w"> </span>--group-ids<span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="m">250</span><span class="w"> </span><span class="m">750</span><span class="w"> </span>--classification<span class="w"> </span>variable<span class="w"> </span>flaring<span class="w"> </span>--taxonomy-map<span class="w"> </span>map.json<span class="w"> </span>--comment<span class="w"> </span>confident<span class="w"> </span>--start<span class="w"> </span><span class="m">35</span><span class="w"> </span>--stop<span class="w"> </span><span class="m">50</span><span class="w"> </span>--skip-phot<span class="w"> </span>--p-threshold<span class="w"> </span><span class="m">0</span>.9<span class="w"> </span>--write-obj-id<span class="w"> </span>--result-format<span class="w"> </span>csv<span class="w"> </span>--use-existing-obj-id<span class="w"> </span>--post-survey-id<span class="w"> </span>--replace-classifications
+</pre></div>
+</div>
+</section>
+<section id="scope-manage-annotation">
+<h2>scope-manage-annotation<a class="headerlink" href="#scope-manage-annotation" title="Link to this heading">¶</a></h2>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>–action : one of “post”, “update”, or “delete”</p></li>
+<li><p>–source : ZTF ID or path to .csv file with multiple objects (ID column “obj_id”)</p></li>
+<li><p>–group-ids : target group id(s) on Fritz, space-separated</p></li>
+<li><p>–origin : name of annotation</p></li>
+<li><p>–key : name of annotation</p></li>
+<li><p>–value : value of annotation (required for “post” and “update” - if source is a .csv file, value will auto-populate from <code class="docutils literal notranslate"><span class="pre">source[key]</span></code>)</p></li>
+</ol>
+<p>process:</p>
+<ol class="arabic simple">
+<li><p>for each source, find existing annotations (for “update” and “delete” actions)</p></li>
+<li><p>interact with API to make desired changes to annotations</p></li>
+<li><p>confirm changes with printed messages</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>scope-manage-annotation<span class="w"> </span>--action<span class="w"> </span>post<span class="w"> </span>--source<span class="w"> </span>sample.csv<span class="w"> </span>--group_ids<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="m">400</span><span class="w"> </span>--origin<span class="w"> </span>revisedperiod<span class="w"> </span>--key<span class="w"> </span>period
+</pre></div>
+</div>
+</section>
+<section id="scope-upload-disagreements-deprecated">
+<h2>Scope Upload Disagreements (deprecated)<a class="headerlink" href="#scope-upload-disagreements-deprecated" title="Link to this heading">¶</a></h2>
+<p>inputs:</p>
+<ol class="arabic simple">
+<li><p>dataset</p></li>
+<li><p>group id on Fritz</p></li>
+<li><p>gloria object</p></li>
+</ol>
+<p>process:</p>
+<ol class="arabic simple">
+<li><p>read in the csv dataset to pandas dataframe</p></li>
+<li><p>get high scoring objects on DNN or on XGBoost from Fritz</p></li>
+<li><p>get objects that have high confidence on DNN but low confidence on XGBoost and vice versa</p></li>
+<li><p>get different statistics of those disagreeing objects and combine to a dataframe</p></li>
+<li><p>filter those disagreeing objects that are contained in the training set and remove them</p></li>
+<li><p>upload the remaining disagreeing objects to target group on Fritz</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./scope_upload_disagreements.py<span class="w"> </span>-file<span class="w"> </span>dataset.d15.csv<span class="w"> </span>-id<span class="w"> </span><span class="m">360</span><span class="w"> </span>-token<span class="w"> </span>sample_token
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="quickstart.html"
+       title="previous chapter">← Quick Start Guide</a>
+  </li>
+  <li class="next">
+    <a href="scripts.html"
+       title="next chapter">SCoPe script guide →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

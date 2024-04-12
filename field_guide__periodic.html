@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Periodic Variables (pnp)</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">ZTF Variable Source Classification Project</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#ztf-variable-source-classification-project">ztf variable source classification project</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="developer.html" class="reference internal ">Installation/Developer Guidelines</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="quickstart.html" class="reference internal ">Quick Start Guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="usage.html" class="reference internal ">Usage</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scripts.html" class="reference internal ">SCoPe script guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scanner.html" class="reference internal ">Guide for Fritz Scanners</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="field_guide.html" class="reference internal ">Field guide</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="allocation.html" class="reference internal ">ACCESS allocation management</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="zenodo.html" class="reference internal ">Data Releases on Zenodo</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="license.html" class="reference internal ">License</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Periodic Variables (pnp)</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="periodic-variables-pnp">
+<h1>Periodic Variables (pnp)<a class="headerlink" href="#periodic-variables-pnp" title="Link to this heading">¶</a></h1>
+<p>Periodic Variables are objects that exhibit repeating sequences of values over a fixed length of time, known as the period.
+Many astrophysical objects exhibit periodic behavior, including eclipsing binaries, pulsators, etc.</p>
+<section id="classification-and-numbers">
+<h2>Classification and numbers<a class="headerlink" href="#classification-and-numbers" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Supertypes</p>
+<ul>
+<li><p>variable</p></li>
+</ul>
+</li>
+<li><p>Subtypes</p>
+<ul>
+<li><p>Eclipsing</p></li>
+<li><p>Sinusoidal</p></li>
+<li><p>Sawtooth</p></li>
+<li><p>Elliptical</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ztf-light-curves">
+<h2>ZTF light curves<a class="headerlink" href="#ztf-light-curves" title="Link to this heading">¶</a></h2>
+<p><img alt="ZTF periodic" src="_images/periodic.png" /></p>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Periodic variables have periods ranging from minutes to over a thousand days with millimagnitude to magnitude level variations.</p>
+</section>
+<section id="light-curve-characteristics">
+<h3>Light curve characteristics<a class="headerlink" href="#light-curve-characteristics" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>periodic variable: objects that exhibit repeating sequences of values over a fixed length of time</p></li>
+<li><p>period range: 0.001-1000 days</p></li>
+<li><p>amplitude: varies from survey precision to more than a magnitude</p></li>
+</ul>
+<p><img alt="HR diagram of Periodic" src="_images/hr__periodic.png" /></p>
+<p><img alt="RA/Dec diagram of Periodic" src="_images/radec__periodic.png" /></p>
+</section>
+</section>
+<section id="references-and-further-reading">
+<h2>References and further reading:<a class="headerlink" href="#references-and-further-reading" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Drake et al., 2014, ApJS 618 213 9, The Catalina Surveys Periodic Variable Catalog <a class="reference external" href="https://arxiv.org/pdf/1405.4290.pdf">arxiv:1405.4290</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, The SCoPe collaboration.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
